@@ -1,9 +1,9 @@
 # Fdb version 3
-["xdvipdfmx"] 1506137799 "homework1.xdv" "homework1.pdf" "homework1" 1506137799
-  "homework1.xdv" 1506137799 15584 f6dc4a326ea48173cff8f61921642bf3 "xelatex"
+["xdvipdfmx"] 1506144021 "homework1.xdv" "homework1.pdf" "homework1" 1506144022
+  "homework1.xdv" 1506144021 15860 ea55e74fa74da3021aadf6eafcfceba0 "xelatex"
   (generated)
   "homework1.pdf"
-["xelatex"] 1506137798 "homework1.tex" "homework1.xdv" "homework1" 1506137799
+["xelatex"] 1506144021 "homework1.tex" "homework1.xdv" "homework1" 1506144022
   "/usr/local/texlive/2017/texmf-dist/fonts/map/fontname/texfonts.map" 1480098670 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1480098689 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1480098698 1004 54797486969f23fa377b128694d548df ""
@@ -29,6 +29,8 @@
   "/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/gettitlestring.sty" 1480098815 8237 3b62ef1f7e2c23a328c814b3893bc11f ""
   "/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty" 1490564930 185082 1fb09d7d24834377f95006300bc91fd2 ""
   "/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty" 1480098815 70864 bcd5b216757bd619ae692a151d90085d ""
+  "/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/ifpdf.sty" 1490564930 1251 d170e11a3246c3392bc7f59595af42cb ""
+  "/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/ifvtex.sty" 1480098815 6797 90b7f83b0ad46826bc16058b1e3d48df ""
   "/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/se-ascii-print.def" 1480098815 3154 688330b6ca706e672a9310fc1a549476 ""
   "/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/stringenc.sty" 1480098815 21411 4c6135fd98dd4f5499becbfc9a323deb ""
   "/usr/local/texlive/2017/texmf-dist/tex/generic/ulem/ulem.sty" 1480098819 23756 854c01b779030ff5b2aad88ba7a119f2 ""
@@ -44,6 +46,7 @@
   "/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amstext.sty" 1480098820 2431 fe3078ec12fc30287f568596f8e0b948 ""
   "/usr/local/texlive/2017/texmf-dist/tex/latex/base/article.cls" 1480098821 19821 310da678527a7dfe2a02c88af38079b7 ""
   "/usr/local/texlive/2017/texmf-dist/tex/latex/base/size10.clo" 1480098821 8292 e897c12e1e886ce77fe26afc5d470886 ""
+  "/usr/local/texlive/2017/texmf-dist/tex/latex/geometry/geometry.sty" 1480098829 40502 e003406220954b0716679d7928aedd8a ""
   "/usr/local/texlive/2017/texmf-dist/tex/latex/graphics-cfg/color.cfg" 1480098830 1213 620bba36b25224fa9b7e1ccb4ecb76fd ""
   "/usr/local/texlive/2017/texmf-dist/tex/latex/graphics-cfg/graphics.cfg" 1480098830 1224 978390e9c2234eab29404bc21b268d1e ""
   "/usr/local/texlive/2017/texmf-dist/tex/latex/graphics-def/xetex.def" 1498427493 12707 672c620846df0fecf0a7a99fed83566d ""
@@ -67,11 +70,11 @@
   "/usr/local/texlive/2017/texmf-dist/web2c/texmf.cnf" 1494087824 32646 eadc4ca26cdbe7105ac7c593aa8c4f72 ""
   "/usr/local/texlive/2017/texmf-var/web2c/xetex/xelatex.fmt" 1505912626 3705020 16cf23335c705db07a658f87c42e04a7 ""
   "/usr/local/texlive/2017/texmf.cnf" 1505912597 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
-  "homework1.aux" 1506137799 628 8e762e3fa6240f6f8fe2e9db6cd33e0e ""
-  "homework1.out" 1506137799 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "homework1.tex" 1506137798 3167 3fd7485330febc5b8e949cb2311075d7 ""
+  "homework1.aux" 1506144021 628 8e762e3fa6240f6f8fe2e9db6cd33e0e ""
+  "homework1.out" 1506144021 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "homework1.tex" 1506144021 3303 40e1cc7049bf6020913beb92304fa876 ""
   (generated)
-  "homework1.log"
   "homework1.out"
-  "homework1.aux"
+  "homework1.log"
   "homework1.xdv"
+  "homework1.aux"
