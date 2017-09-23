@@ -1,0 +1,55 @@
+% good luck;)
+\documentclass{article}
+\title{Homework 1}
+\author{Xiaoling Long}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[colorlinks,linkcolor=red]{hyperref}
+\usepackage{amsmath, amsthm, amssymb}
+\usepackage{subfloat}
+\newtheorem{prop}{Proposition}
+\usepackage{ulem}
+\usepackage{indentfirst}
+\begin{document}
+\maketitle
+
+\begin{description}
+\item[Problem 1](4/10, \textit{If $G$ is an abelian group, then $End(G)$ is a ring}):
+
+Let $G$ be an abelian group with group operation $*$. For $\phi,\psi \in End(G)$,
+consider the definition of $\phi +\psi$ and $\phi\psi$ that we gave in the class.
+Verify that $End(G)$ is a ring under these two operations, i.e.,
+check that all the axioms of the ring structure are true. For example,
+verify that for $\phi,\psi,\chi \in End(G)$, we have that $\phi(\psi+\chi)=\phi\psi+\phi\chi$.
+\begin{proof}
+      $$\forall \phi,\psi,\chi \in End(G)$$
+      We have that,
+  \begin{align*}
+    [(\phi+\psi)+\chi](g)&=[\phi+\psi](g)*\chi(g)\\
+    &=[\phi(g)*\psi(g)]*\chi(g)
+    \intertext{G is an abelian group.}
+   [\phi(g)*\psi(g)]*\chi(g)&=\phi(g)*[\psi(g)*\chi(g)]\\
+    &=[\phi+(\psi+\chi)](g)
+  \end{align*}
+  So, $$(\phi+\psi)+\chi=\phi+(\psi+\chi)$$
+\end{proof}
+\item[Problem 2](4/10, \textit{Behavior of identity element and inverses under
+  group homomorphisms}):
+
+Let $G$, $H$ be groups with group operations $*_G$, $*_H$ and identity
+elements $e_G$, $e_H$ respectively. Let $\phi:G\to H$ be a group
+homomorphism. Show that $\phi(e_G)=e_H$ and that $\forall g\in G$ we
+have that $\phi(g^{-1})=(\phi(g))^{-1}$.
+\begin{proof}
+Here goes your anwser.
+\end{proof}
+\item[Problem 3](2/10, \textit{Group isomorphism is a transitive relation}):
+
+Let $G$, $H$, $K$ be groups such that $G$ is isomorphic to $H$, and
+$H$ is isomorphic to $K$. Show that $G$ is isomorphic to $K$.
+\begin{proof}
+Here goes your anwser.
+\end{proof}
+
+\end{description}
+\end{document}

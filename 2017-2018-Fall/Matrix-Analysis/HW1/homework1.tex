@@ -1,0 +1,93 @@
+% good luck;)
+\documentclass{article}
+\title{Homework 1}
+\author{Xiaoling Long}
+\usepackage{graphicx}
+\usepackage[colorlinks,linkcolor=red]{hyperref}
+\usepackage{amsmath, amsthm, amssymb}
+\usepackage{subfloat}
+\newtheorem{prop}{Proposition}
+\usepackage{ulem}
+\usepackage{indentfirst}
+\begin{document}
+\maketitle
+
+\begin{description}
+\item[Problem 1](4/10, \textit{A little group theory drill}):
+
+Let $G$ be a group with group operation $*$ and identity element $e$.
+Suppose that $\forall g \in G$ we have that $g * g = e$. Show that $G$
+is an abelian group.
+\begin{proof}We can know that,
+%  \begin{equation*}
+%    \forall h \in G \quad\text{s.t. } h * e=e * h
+%  \end{equation*}
+\begin{align*}
+\forall& a,b,g \in G  \quad\intertext{We have }  a*b \in G &\ \text{and }\   g*g^{-1}=e \\
+\to & \quad g =g^{-1}\\
+\to & \quad a*b =(a*b)^{-1}\\
+\quad&= b^{-1}*a^{-1}\\
+\quad &= b*a\\
+ \intertext{Finally, we get that }
+ a*b&=b*a
+\end{align*}
+So, $G$ is an abelian group.\\
+Done.
+\end{proof}
+
+\item[Problem 2](4/10, \textit{Behavior of identity element and inverses under
+  group homomorphisms}):
+
+Let $G$, $H$ be groups with group operations $*_G$, $*_H$ and identity
+elements $e_G$, $e_H$ respectively. Let $\phi:G\to H$ be a group
+homomorphism. Show that $\phi(e_G)=e_H$ and that $\forall g\in G$ we
+have that $\phi(g^{-1})=(\phi(g))^{-1}$.
+\begin{proof}
+  First question.\\Because $\phi:G\to H$ is a group homomorphism.\\
+  We can say that $$\forall g \in G,\exists h \in H \quad \phi(g)=h$$\\
+  Then,
+  \begin{align*}
+    \phi(g)&=\phi(g*_G e_G)\\
+    &=\phi(g)*_H \phi(e_G)\\
+    &=h*_H \phi(e_G)\\
+    &=h
+  \end{align*}
+  So we have $$h*_H\phi(e_G)=h$$
+  Then,$$h^{-1}*_Hh*_H \phi(e_G)=h^{-1}*_H h$$
+  $$\forall h \in H \quad h*_Hh^{-1}=h^{-1}*_Hh=e_H$$
+  Finally,$$\phi(e_G)=e_H$$
+  Second question.\\
+  We know $$\phi(e_G)=e_H $$
+   and $$\forall g \in G \quad g*g^{-1}=e_G $$
+  So,
+  \begin{align*}
+    \phi(e_G)=\phi(g*_G g^{-1})&=\phi(g)*_H \phi(g^{-1}) \\
+    &=e_H\\
+  \end{align*}
+  We can do $$(\phi(g))^{-1}*_H\phi(g)*_H\phi(g^{-1})=(\phi(g))^{-1}*_He_H$$
+    $$\to (\phi(g))^{-1}=\phi(g^{-1})\\$$
+  Done.
+\end{proof}
+\item[Problem 3](2/10, \textit{Group isomorphism is a transitive relation}):
+
+Let $G$, $H$, $K$ be groups such that $G$ is isomorphic to $H$, and
+$H$ is isomorphic to $K$. Show that $G$ is isomorphic to $K$.
+\begin{proof}
+ Show that:\\
+ Let:$\phi_G,\phi_H,\psi_H,\psi_K:G\to H,H\to K , H\to G, K\to H$ \quad be group homomorsim respectively.
+ \begin{align*}
+   \forall g \in G \quad \exists h \in H \quad\phi_G(g)=h\\
+   \forall h \in H \quad \exists k \in K \quad\phi_H(h)=k\\
+   \forall k \in K \quad \exists h \in H \quad\psi_K(k)=h\\
+   \forall h \in H \quad \exists g \in G \quad\psi_H(h)=g\\
+   \to \forall g \in G \quad \exists k \in K \quad \phi_H(\phi_G(g))=k\\
+   \&\quad \forall k \in K \quad \exists g \in G \quad \psi_H(\psi_K(k))=g
+ \end{align*}
+ So we can find a function $\phi$ let $$\forall g \in G \quad \exists k \in K \quad \phi(g)=k$$
+ There also is a function $\psi$ let $$\forall k \in K \quad \exists g \in G \quad \psi(k)=g$$
+ So, $G$ is isomorphic to $K$.\\
+ Done.
+\end{proof}
+
+\end{description}
+\end{document}
