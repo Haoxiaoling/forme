@@ -4,7 +4,7 @@
 \usepackage{geometry}
 \usepackage[colorlinks,linkcolor=blue]{hyperref}
 \newcommand\email[1]{\href{mailto:#1}{\uline{\nolinkurl{#1}}}}
-\geometry{left=4cm,right=4cm,top=1cm,bottom=4cm}
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=4cm}
 \title{Matrix Analysis Homework 2}
 \author{龙肖灵 \\Xiaoling Long\\Student ID.:81943968\\Email:\email{longxl@shanghaitech.edu.cn}}
 \usepackage{graphicx}
@@ -71,7 +71,7 @@ verify that for $\phi,\psi,\chi \in End(G)$, we have that $\phi(\psi+\chi)=\phi\
             \intertext{Finally, $\cdot$ is associative.}
             [(\phi\cdot\psi)\cdot\chi](g)&=[\phi\cdot(\psi\cdot\chi)](g)
           \end{align*}
-          \item Let $forall g \in G \quad 1_{End(V)}: g \mapsto g$, then,
+          \item Let $\forall g \in G \quad 1_{End(V)}: g \mapsto g$, then,
           \begin{align*}
             [\phi \cdot 1_{End(V)}](g)&=\phi(1_{End(V)}(g))\\
             &=\phi(g)
@@ -109,7 +109,7 @@ If $\exists c \in F$ and $c\ne 0$, $\sigma(c)=0_{End(V)}$, we have that,
     &=0_{End(V)}\cdot \sigma(a)\\
     &=0_{End(V)}
     \intertext{Actually, we have }
-    \forall f & \in F \quad \exists c \in F \quad f=ac\\
+    \forall f & \in F \quad \exists a \in F \quad f=c\cdot a\\
     \to \forall & f \in  F \quad \sigma(f)=0_{End(V)}
   \end{align*}
   So, $End(V)$ is a zero ring. And if $End(V)$ is not a zero ring, we have $\forall f\in F :

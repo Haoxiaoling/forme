@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.9.20)  26 SEP 2017 19:27
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.9.20)  27 SEP 2017 14:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1280,15 +1280,15 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(113.81102pt, 369.88583pt, 113.81102pt)
-* v-part:(T,H,B)=(28.45274pt, 702.78308pt, 113.81102pt)
+* h-part:(L,W,R)=(71.13188pt, 455.24411pt, 71.13188pt)
+* v-part:(T,H,B)=(71.13188pt, 660.10394pt, 113.81102pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
-* \textwidth=369.88583pt
-* \textheight=702.78308pt
-* \oddsidemargin=41.54103pt
-* \evensidemargin=41.54103pt
-* \topmargin=-80.81725pt
+* \textwidth=455.24411pt
+* \textheight=660.10394pt
+* \oddsidemargin=-1.1381pt
+* \evensidemargin=-1.1381pt
+* \topmargin=-38.1381pt
 * \headheight=12.0pt
 * \headsep=25.0pt
 * \topskip=10.0pt
@@ -1371,10 +1371,10 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 180.
 Here is how much of TeX's memory you used:
  25705 strings out of 492998
  486367 string characters out of 6134491
- 570466 words of memory out of 5000000
+ 571455 words of memory out of 5000000
  29499 multiletter control sequences out of 15000+600000
  537226 words of font info for 68 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  46i,10n,81p,10437b,718s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on homework2.xdv (4 pages, 36376 bytes).
+Output written on homework2.xdv (4 pages, 36332 bytes).
