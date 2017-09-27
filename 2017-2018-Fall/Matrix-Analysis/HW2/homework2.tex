@@ -1,12 +1,13 @@
 % good luck;)
 \documentclass[a4paper]{article}
+\usepackage{xeCJK}
 \usepackage{geometry}
+\usepackage[colorlinks,linkcolor=blue]{hyperref}
+\newcommand\email[1]{\href{mailto:#1}{\uline{\nolinkurl{#1}}}}
 \geometry{left=4cm,right=4cm,top=1cm,bottom=4cm}
-\title{Homework 1}
-\author{Xiaoling Long\\Student ID.:81943968\\email:longxl@shanghaitech.edu.cn}
-\usepackage[utf8]{inputenc}
+\title{Matrix Analysis Homework 2}
+\author{龙肖灵 \\Xiaoling Long\\Student ID.:81943968\\Email:\email{longxl@shanghaitech.edu.cn}}
 \usepackage{graphicx}
-\usepackage[colorlinks,linkcolor=red]{hyperref}
 \usepackage{amsmath, amsthm, amssymb}
 \usepackage{subfloat}
 \newtheorem{prop}{Proposition}
@@ -25,32 +26,154 @@ check that all the axioms of the ring structure are true. For example,
 verify that for $\phi,\psi,\chi \in End(G)$, we have that $\phi(\psi+\chi)=\phi\psi+\phi\chi$.
 \begin{proof}
       $$\forall \phi,\psi,\chi \in End(G)$$
-      We have that,
+
+      \begin{enumerate}
+        \item       We have that, \begin{align*}
+            [(\phi+\psi)+\chi](g)&=[\phi+\psi](g)*\chi(g)\\
+            &=[\phi(g)*\psi(g)]*\chi(g)
+            \intertext{G is an abelian group.}
+           [\phi(g)*\psi(g)]*\chi(g)&=\phi(g)*[\psi(g)*\chi(g)]\\
+            &=[\phi+(\psi+\chi)](g)
+          \end{align*}
+          So(+ is associative), $$(\phi+\psi)+\chi=\phi+(\psi+\chi)$$
+          \item And then,
+          \begin{align*}
+            [\phi+\psi](g)&=\phi(g)*\psi(g)\\
+            &=\psi(g)*\phi(g)\\
+            &=[\psi+\phi](g)\quad\text{(+ is commutative)}
+          \end{align*}
+          \item Identity under $+$,\\
+          Let $\forall g \in End(V)\quad 0_{End(V)}: g \mapsto e_{G}\text{($e_{G}$ is identity of group $G$)} $
+          be identity of group $End(V)$ under $+$.
+          \begin{align*}
+            [\phi+0_{End(V)}](g)&=\phi(g)*0_{End(V)}(g)\\
+            &=\phi(g)*e_{G}(g)\\
+            &=\phi(g)
+          \end{align*}
+          We can say that, $$\phi+0_{End(g)} =\phi$$
+          So $0_{End(V)}$ is identity of $End(V)$ under operation $+$
+          \item Inverse of $+$,let $-\phi: g\mapsto (\phi(g))^{-1}$.\\
+          We can know,
+          \begin{align*}
+            [\phi+(-\phi)](g)&=\phi(g)*([-\phi])(g)\\
+            &=\phi(g)*(\phi(g))^{-1}\\
+            &=e_{G}\\
+            &=0_{End(V)}(g)
+          \end{align*}
+          So, we can say that $$[\phi+(-\phi)]=0_{End(V)}$$
+          \item About $\cdot$, we have that,
+          \begin{align*}
+            [(\phi\cdot\psi)\cdot\chi](g)&=[\phi\cdot\psi](\chi(g))\\
+            &=\phi[\psi(\chi(g))]
+            \intertext{Also, we have this,}
+            [\phi\cdot(\psi\cdot\chi)](g)&=\phi[(\psi\cdot\chi)(g)]\\
+            &=\phi[\psi(\chi(g))]
+            \intertext{Finally, $\cdot$ is associative.}
+            [(\phi\cdot\psi)\cdot\chi](g)&=[\phi\cdot(\psi\cdot\chi)](g)
+          \end{align*}
+          \item Let $forall g \in G \quad 1_{End(V)}: g \mapsto g$, then,
+          \begin{align*}
+            [\phi \cdot 1_{End(V)}](g)&=\phi(1_{End(V)}(g))\\
+            &=\phi(g)
+            \intertext{Finally, we get}
+            (\phi \cdot 1_{End(V)})&=\phi
+          \end{align*}
+          \item Left distributivity.
+          \begin{align*}
+            [\phi(\psi+\chi)](g)&=\phi[\psi(g)*\chi(g)]\\
+            &=[\phi(\psi(g))]*[\phi(\chi(g))]\\
+            \intertext{And}
+            [\phi\psi+\phi\chi](g)&=[\phi\psi(g)]*[\phi\psi(g)]\\
+            &=[\phi(\psi(g))]*[\phi(\chi(g))]\\
+            &=[\phi(\psi+\chi)](g)\quad\text{(Done.)}
+          \end{align*}
+          \item Right distributivity.
+          \begin{align*}
+            [(\phi+\psi)\chi](g)&=[\phi+\psi](\chi(g))\\
+            &=[\phi(\chi(g))]*[\psi(\chi(g))]\\
+            &=[\phi\chi](g)*[\psi\chi](g)\\
+            &=[\phi\chi+\psi\chi](g)\quad\text{(Done.)}
+          \end{align*}
+      \end{enumerate}
+      So, $End(V)$ satisfies the all properties of ring.$End(V)$ is a ring under $+$ and $\cdot $.
+
+\end{proof}
+\item[Problem 2](3/10, \textit{Injectivity of ring homomorphisms on a field}):{
+    Let $V \ne 0$ be a vector space over a field $F$ and let $\sigma: F \to End(V)$ be its associated ring homomorphism. Show that if $0 \ne c \in F$, then $\sigma(c)$ can not be the zero element of $End(V)$. More generally, show that if $R\ne 0$ is any ring and $\tau: F \to R$ is any ring homomorphism, then $\tau(c) = 0 \Rightarrow c = 0$.
+}
+
+\begin{proof}
+If $\exists c \in F$ and $c\ne 0$, $\sigma(c)=0_{End(V)}$, we have that,
   \begin{align*}
-    [(\phi+\psi)+\chi](g)&=[\phi+\psi](g)*\chi(g)\\
-    &=[\phi(g)*\psi(g)]*\chi(g)
-    \intertext{G is an abelian group.}
-   [\phi(g)*\psi(g)]*\chi(g)&=\phi(g)*[\psi(g)*\chi(g)]\\
-    &=[\phi+(\psi+\chi)](g)
+    \forall a \in F \quad \sigma(c\cdot a)&=\sigma(c)\cdot \sigma(a)\\
+    &=0_{End(V)}\cdot \sigma(a)\\
+    &=0_{End(V)}
+    \intertext{Actually, we have }
+    \forall f & \in F \quad \exists c \in F \quad f=ac\\
+    \to \forall & f \in  F \quad \sigma(f)=0_{End(V)}
   \end{align*}
-  So, $$(\phi+\psi)+\chi=\phi+(\psi+\chi)$$
+  So, $End(V)$ is a zero ring. And if $End(V)$ is not a zero ring, we have $\forall f\in F :
+  \sigma(f) \ne 0_{End(V)}$, except $c =0$.Now I will show that.\\
+  Let $0$ be identity element of $F$. And we can say that,$$\forall c \in F \quad c+0=0+c=c$$
+  Let $c\ne 0$ ,so,
+  \begin{align*}
+    \sigma(c+0)&=\sigma(c)+\sigma(0)\\
+    \sigma(c)&=\sigma(c)+\sigma(0)\\
+    \intertext{Because}
+    \forall c \in F : \sigma(c)+0_{End(V)}&=0_{End(V)}+\sigma(c)=\sigma(c)\\
+    \sigma(0)&=0_{End(V)}
+  \end{align*}
+  So, we can give a conclusion that if $End(V)$ is not a zero ring, $\forall 0\ne c \in F \to
+  \sigma(c)$ can not be the zero element of $End(V)$.\\
+  More generally, by contrary, supposed $\exists c \in R$ and $c\ne 0$ let $\tau(c)=0$
+  \begin{align*}
+    \forall a \in R \quad &\exists b \in R : a=b\cdot c \\
+     \tau(b\cdot c)&=\tau(b)\cdot \tau(c)\\
+    &=\tau(b)\cdot 0\\
+    &=0\\
+    \to \tau(a)&=0
+  \end{align*}
+  So $F$ is a zero ring. Contraty to condition. And if $a=0$ we have $\tau(0)$
+  always equals to $0$.
+  We can conclude that $$\tau(c)=0 \to c=0$$
+   Done.
 \end{proof}
-\item[Problem 2](4/10, \textit{Behavior of identity element and inverses under
-  group homomorphisms}):
 
-Let $G$, $H$ be groups with group operations $*_G$, $*_H$ and identity
-elements $e_G$, $e_H$ respectively. Let $\phi:G\to H$ be a group
-homomorphism. Show that $\phi(e_G)=e_H$ and that $\forall g\in G$ we
-have that $\phi(g^{-1})=(\phi(g))^{-1}$.
-\begin{proof}
-Here goes your anwser.
-\end{proof}
-\item[Problem 3](2/10, \textit{Group isomorphism is a transitive relation}):
+\item[Problem 3](3/10, \textit{An adventure in ring theory}):{
+    Let $R$ be a commutative ring with additive identity 0 and multiplicative identity 1.
+    Let r be a nilpotent element of $R$, i.e., there exists a positive integer $n$ such
+    that $r^{n} = 0$. Show that the element $u := r + 1$ is an unit of $R$, i.e.,
+    show that there exists some element $p \in R$, such that $up = 1$.
+    \emph{Terminology: the set of invertible elements of a ring is a group,
+    known as the group of units of the ring. Thus the group of units of a field
+    is the entire field except the zero element. }
+}
 
-Let $G$, $H$, $K$ be groups such that $G$ is isomorphic to $H$, and
-$H$ is isomorphic to $K$. Show that $G$ is isomorphic to $K$.
 \begin{proof}
-Here goes your anwser.
+  It means that there always is a inverse if $u=r+1$.
+  Because the properties of the ring. We can say that.
+  \begin{align}
+    u \cdot 1&=u\notag\\
+    &=r+1\tag{1}\\
+    r+0&=r\notag\\
+    \intertext{Let $n=2$, then we have }
+    r^{2}&=0\tag{2}\notag\\
+    u\cdot r&=(r+1)\cdot r\notag\\
+    &=r^{2}+r\tag{3}
+  \end{align}
+  Bring (2) into (3), we can get
+  \begin{align}
+    u\cdot r=r\tag{4}
+  \end{align}
+  Then (1) minus (4),$$u\cdot 1-u\cdot r=1$$
+  And $R$ is a commutative ring with multiplicative.
+  \begin{align*}
+    u\cdot (1-r)&=1\\
+    (1-r)\cdot u&=1
+  \end{align*}
+  And we can easily get $1-r \in R$. Finally, we can say $u:=r+1$ is
+  an unit of $R$. And the inverse of $u$ is $1-r$.\\
+  Done.
 \end{proof}
 
 \end{description}
