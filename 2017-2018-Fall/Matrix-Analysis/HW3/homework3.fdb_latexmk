@@ -1,16 +1,21 @@
 # Fdb version 3
-["xdvipdfmx"] 1506908692 "test.xdv" "test.pdf" "test" 1506908692
-  "test.xdv" 1506908692 2516 637da44b51a7a5841685b51572451aff "xelatex"
+["xdvipdfmx"] 1506941696 "homework3.xdv" "homework3.pdf" "homework3" 1506941697
+  "homework3.xdv" 1506941696 36028 c739256e6213d38ea0f31354cf503239 "xelatex"
   (generated)
-  "test.pdf"
-["xelatex"] 1506908691 "test.tex" "test.xdv" "test" 1506908692
+  "homework3.pdf"
+["xelatex"] 1506941695 "homework3.tex" "homework3.xdv" "homework3" 1506941697
   "/usr/local/texlive/2017/texmf-dist/fonts/map/fontname/texfonts.map" 1480098670 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1480098689 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1480098698 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1480098698 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
+  "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/amsfonts/euler/eufm10.tfm" 1480098698 1040 b84415f97d114011685943ade933dc71 ""
+  "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/amsfonts/euler/eufm5.tfm" 1480098698 1040 a9d2074f3fa062d4d9046b92e2334d8c ""
+  "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/amsfonts/euler/eufm7.tfm" 1480098698 1040 82eb6630b094bff824fccca83ff507f9 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1480098698 916 f87d7c45f9c908e672703b83b72241a3 ""
+  "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm" 1480098698 924 9904cf1d39e9767e7a3622f2a125a565 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm" 1480098698 928 2dc8d444221b7a635bb58038579b861a ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm" 1480098698 908 2921f8a10601f252058503cc6570e581 ""
+  "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm" 1480098698 940 75ac932a52f80982a9f8ea75d03a34cf ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm" 1480098698 940 228d6584342e91276bf566bcf9716b83 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmex10.tfm" 1480098701 992 662f679a0b3d2d53c1b94050fdaa3f50 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm" 1480098701 1524 4414a8315f39513458b80dfc63bff03a ""
@@ -39,6 +44,7 @@
   "/usr/local/texlive/2017/texmf-dist/tex/latex/amscls/amsthm.sty" 1480098820 12225 3cca0d18522255979a1047206228b9d0 ""
   "/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/amsfonts.sty" 1480098820 5949 3f3fd50a8cc94c3d4cbf4fc66cd3df1c ""
   "/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/amssymb.sty" 1480098820 13829 94730e64147574077f8ecfea9bb69af4 ""
+  "/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/ueuf.fd" 1480098820 1047 4252767c0fde12e3ce9f914ef4bb1ea1 ""
   "/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd" 1480098820 961 6518c6525a34feb5e8250ffa91731cff ""
   "/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd" 1480098820 961 d02606146ba5601b5645f987c92e6193 ""
   "/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsbsy.sty" 1480098820 2210 5c54ab129b848a5071554186d0168766 ""
@@ -94,11 +100,11 @@
   "/usr/local/texlive/2017/texmf-dist/web2c/texmf.cnf" 1494087824 32646 eadc4ca26cdbe7105ac7c593aa8c4f72 ""
   "/usr/local/texlive/2017/texmf-var/web2c/xetex/xelatex.fmt" 1505912626 3705020 16cf23335c705db07a658f87c42e04a7 ""
   "/usr/local/texlive/2017/texmf.cnf" 1505912597 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
-  "test.aux" 1506908692 628 8e762e3fa6240f6f8fe2e9db6cd33e0e ""
-  "test.out" 1506908692 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "test.tex" 1506820532 484 359283063fbb8e129c44548fab0f8082 ""
+  "homework3.aux" 1506941696 628 8e762e3fa6240f6f8fe2e9db6cd33e0e ""
+  "homework3.out" 1506941696 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "homework3.tex" 1506941695 8334 9bce1c48e731063be49c4b8046d75eca ""
   (generated)
-  "test.out"
-  "test.aux"
-  "test.log"
-  "test.xdv"
+  "homework3.out"
+  "homework3.xdv"
+  "homework3.log"
+  "homework3.aux"
