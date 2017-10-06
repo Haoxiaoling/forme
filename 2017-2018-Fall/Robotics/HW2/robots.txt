@@ -1,0 +1,19 @@
+  The five coolest robots I think as following.
+    1.DJI Spark(UAV.)
+    2.Asimo(An excellent and beautiful humanoid)
+    3.Atlas(Boston dynamics humanoid.)
+    4.Valkyrie(NASA Robot.)
+    5.Bigdog(A good carrier for army.)
+
+  The reason why I think the UAV is a cool robot is that this robot can fly. Flying is always our
+dream. And UAV is easy to mount a camera on it, then we can see many scenery through it. which
+we cannot see. And I think Flapping-wing robot is amazing robot. It's an incredible idea brought
+up ever.
+
+  Challenges for humanoid household robot
+    1.The greatest challenge is combining many abilities together. Although it's easy to do something simple
+    , it's still difficult to put them on the same robot.
+    2.And sensor fusion also can be a big challenge. That robot can do lots of different things means he need lots of sensor.
+    3.Decision planner is challenge, too. If he has many things to do, which one do first and which one is next and what if unknown
+    situation.
+    4.Make it cheaper is the most important challenge for household robot.
