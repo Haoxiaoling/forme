@@ -56,7 +56,7 @@
               $\mathfrak{B}_{1}\cap\mathfrak{B}_{2}=\emptyset$. Then show
               that $\mathcal{\mathcal{V}}=span(\mathfrak{B}_{1})\oplus span(\mathfrak{B}_{2})$.
         \item Let $\mathcal{\mathcal{V}}=\mathcal{S}\oplus\mathcal{T}$, and let $\mathfrak{B}_{1}$ be a basis for $\mathcal{S}$ and $\mathfrak{B}_{2}$ be a basis for $\mathcal{T}$.
-              Show that $\mathfrak{B}_{1}\cap\mathfrak{B}_{2}$ and that $\mathfrak{B}_{1}\cup\mathfrak{B}_{2}$ is a basis for $\mathcal{V}$.
+              Show that $\mathfrak{B}_{1}\cap\mathfrak{B}_{2}=\emptyset$ and that $\mathfrak{B}_{1}\cup\mathfrak{B}_{2}$ is a basis for $\mathcal{V}$.
        \end{enumerate}
  }
  \begin{proof}
@@ -73,7 +73,7 @@
          and
          $$v_{1}=a_{1}b_{1}+a_{2}b_{2}+...+a_{k}b_{k} \in \text{span($\mathfrak{B}_{1}$)}$$
          $$v_{2}=a_{k+11}b_{k+1}+a_{k+2}b_{K+2}+...+a_{n}b_{n} \in \text{span($\mathfrak{B}_{2}$)}$$
-         We get that $v=v_{1}+v_{2}$.So, $$\mathcal{V}=\mathfrak{B}_{1}+\mathfrak{B}_{2}$$
+         We get that $v=v_{1}+v_{2}$.So, $$\mathcal{V}=\text{span($\mathfrak{B}_{1}$)}+\text{span($\mathfrak{B}_{2}$)}$$
          To prove independence of $\mathfrak{B}_{1}$ and $\mathfrak{B}_{2}$,
          by contrary, suppose there exists $u_{1}\in \text{span($\mathfrak{B}_{1}$)}$ and
          $u_{2}\in \text{span($\mathfrak{B}_{2}$)}$, satisfying that
@@ -86,7 +86,7 @@
           \to\quad  m_{1}b_{1}+m_{2}b_{2} & +...+m_{k}b_{k}+m_{k+1}b_{k+1}+...+m_{n}b_{n}=0
          \end{align*}
          This is contradicting the independence of basis. So
-         $$\text{$\mathfrak{B}_{1}\cap\mathfrak{B}_{2}=\{0\}$}$$
+         $$\text{span($\mathfrak{B}_{1}$)}\cap\text{span($\mathfrak{B}_{2}$)}=\{0\}$$
    \item Let $\mathfrak{B}_{1}=\{s_{i} | i \in I_{1}\}$
          and $\mathfrak{B}_{2}=\{t_{j} | j \in I_{2}\}$. We have that,
          $$\forall v \in \mathcal{V}\ \  \exists s \in \mathcal{S} \ \  \exists t \in \mathcal{T} \ \ v=s+t$$
@@ -95,13 +95,13 @@
           \forall t \in \mathcal{T} \to t & =\sum_{j} b_{j}t_{j} \quad j \in I_{2}
          \end{align*}
          So we can say that $\forall v \in \mathcal{V}$  , $v=a_{i}s_{i}+b_{j}t_{j}$.So
-         $\mathfrak{B}_{1}\cap \mathfrak{B}_{2}$ is the spanning set for
+         $\mathfrak{B}_{1}\cup \mathfrak{B}_{2}$ is the spanning set for
          $\mathcal{V}$\\
          Supose that, there exists a set of nonzero coefficents $a_{i}$ and $b_{j}$ , let
          $$\sum_{i} a_{i}s_{i}+\sum_{j} b_{j}t_{j}=0$$
-         Let $s=\sum_{i} a_{i}s_{i}$ and $t=\sum_{j} b_{j}t_{j}$, then we get $s=t$
+         Let $s=\sum_{i} a_{i}s_{i}$ and $t=\sum_{j} b_{j}t_{j}$, then we get $s=-t$
          which is contradicting $\mathcal{S}\cap\mathcal{T}=\{0\}$. So $\mathfrak{B}_{1}$ and $\mathfrak{B}_{2}$ are linearly independent.
-         So $\mathfrak{B}_{1}\cap\mathfrak{B}_{2}$ and that $\mathfrak{B}_{1}\cup\mathfrak{B}_{2}$ is a basis for $\mathcal{V}$.
+         So $\mathfrak{B}_{1}\cap\mathfrak{B}_{2}=\emptyset$ and that $\mathfrak{B}_{1}\cup\mathfrak{B}_{2}$ is a basis for $\mathcal{V}$.
   \end{enumerate}
   Done.
  \end{proof}

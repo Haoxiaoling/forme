@@ -1,0 +1,94 @@
+\documentclass[a4paper]{article}
+\usepackage{xeCJK}
+\usepackage{geometry}
+\geometry{left=2.5cm,right=2.5cm,top=3cm,bottom=3cm}
+\title{Homework n}
+\author{龙肖灵 \\Xiaoling Long\\Student ID.:81943968\\email:longxl@shanghaitech.edu.cn}
+\usepackage{graphicx}
+\usepackage{amsmath, amsthm, amssymb}
+\usepackage{subfloat}
+\usepackage{enumerate}
+\newtheorem{prop}{Proposition}
+\usepackage{ulem}
+\usepackage{indentfirst}
+\begin{document}
+\maketitle
+
+\begin{description}
+\item[Problem 1](\textit{Theorem 2.1.1 in Roman}):\\
+Prove that the set $\mathcal{L}(\mathcal{V},\mathcal{W})$ of all linear transformations from vector space $\mathcal{V}$ to a vector space $\mathcal{W}$ is itself a vector space.
+
+\begin{proof}
+  We should show that this set fit all properties of a vector space.Let $v \in \mathcal{V} , w \in \mathcal{W} $.
+  \begin{enumerate}[ 1) ]
+    \item \textbf{Closure of addition}\ $\forall \tau,\sigma \in \mathcal{L}\left(\mathcal{V},\mathcal{W}\right)$.
+    We can get that,
+      $$[\tau+\sigma](v)=\tau(v)+\sigma(v) \in \mathcal{W}$$
+      So, $\mathcal{L}\left(\mathcal{V},\mathcal{W}\right)$ is closure of addition.
+    \item \textbf{Commutativity of addition}\ $\forall \tau,\sigma \in \mathcal{L}\left(\mathcal{V},\mathcal{W}\right)$.
+    \begin{align*}
+      [\tau+\sigma](v)&=\tau(v)+\sigma(v)
+      &=\sigma(v)+\tau(v)
+      &=[\sigma+\tau](v)
+    \end{align*}
+    So, we can say that,$$\tau+\sigma=\sigma+\tau$$
+    \item \textbf{Associativity of additon}\  $\forall \tau,\sigma,\phi \in \mathcal{L}\left(\mathcal{V},\mathcal{W}\right)$. We have that,
+    \begin{align*}
+      [\tau+(\sigma+\phi)](v)&=\tau(v)+[\sigma+\phi](v)\\
+      &=\tau(v)+\sigma(v)+\phi(v) \in \mathcal{W}\\
+      &=[\tau+\sigma](v)+\phi(v)\\
+      &=[(\tau+\sigma)+\phi](v)
+    \end{align*}
+    Finally, we get $$\tau+(\sigma+\phi)=(\tau+\sigma)+\phi$$
+
+    \item \textbf{Existence of zero}\ Let $0_{\mathcal{L}\left(\mathcal{V},\mathcal{W}\right)}$ maps all $v\in \mathcal{V}$ to $0\in \mathcal{W}$. Then, $\forall \tau \in \mathcal{L}\left(\mathcal{V},\mathcal{W}\right)$,
+    $$[\tau+0_{\mathcal{L}\left(\mathcal{V},\mathcal{W}\right)}](v)=\tau(v)+0_{\mathcal{L}\left(\mathcal{V},\mathcal{W}\right)}(v)=\tau(v)$$
+    \item \textbf{Existence of additive inverses}\ $\forall \tau \in \mathcal{L}\left(\mathcal{V},\mathcal{W}\right)$.
+    $$[\tau+(-\tau)](v)=\tau(v)+(-\tau(v))=0=0_{\mathcal{L}\left(\mathcal{V},\mathcal{W}\right)}(v)$$
+    \item \textbf{Scalar multiplication}\ For all scalars $a,b\in \mathcal{F}$ and for all linear transformation $\tau,\sigma \in \mathcal{L}\left(\mathcal{V},\mathcal{W}\right)$,
+    \begin{align*}
+      a[\tau+\sigma](v)&=a[\tau(v)+\sigma(v)]\\
+      &=a\tau(v)=a\sigma(v)\\
+      &=[a\tau+a\sigma](v)\\
+      \Rightarrow a(\tau+\sigma)&=a\tau+a\sigma\\
+      [(a+b)\tau](v)&=(a+b)\tau(v)\\
+      &=a\tau(v)+b\tau(v)\\
+      &=[a\tau+b\tau](v)\\
+      \Rightarrow (a+b)\tau&=a\tau+b\tau\\
+      [(ab)\tau](v)&=(ab)[\tau(v)]\\
+      &=a[b\tau(v)]\\
+      \Rightarrow (ab)\tau&=a(b\tau)
+    \end{align*}
+  \end{enumerate}
+  All properities of vector space fit for the set  $\mathcal{L}(\mathcal{V},\mathcal{W})$. So, it a a vector space.
+\end{proof}
+
+\item[Problem 2](\textit{Theorem 2.5 in Roman}):\\
+Prove that a linear transformation $\tau \in \mathcal{L}(\mathcal{V},\mathcal{W})$ is an isomorphism if and only if there is a basis $\mathfrak{B}_\mathcal{V}$ for $\mathcal{V}$ for which $\tau\mathfrak{B}_\mathcal{V}$ is a basis for $\mathcal{W}$. Prove that in this case, $\tau$ maps any basis of $\mathcal{V}$ to a basis of $\mathcal{W}$.
+
+\begin{proof}
+First of all, sufficiency of this.\\
+$\forall v \in \mathcal{V}$ has an unique linear combination of the vectors in $\mathfrak{B}_{\mathcal{V}}$. Let $\mathfrak{B}_{\mathcal{V}}=\{v_{i}\  |\ i\in I \}$, we have that,
+\begin{equation*}
+  v=a_{1}v_{1}+a_{2}v_{2}+\cdots +a_{n}v_{n}
+\end{equation*}
+Then we have that,
+\begin{equation*}
+  \tau(v)=a_{1}\tau(v_{1})+a_{2}\tau(v_{2})+\cdots +a_{n}\tau(v_{n})
+\end{equation*}
+$\tau{\mathfrak{B}_{\mathcal{V}}}$ is a basis for $\mathcal{W}$. So $\forall v \in \mathcal{V}, \exists!\  w \in \mathcal{W}, \text{s.t.}\ \tau(v)=w$. So $\tau$ is injective.
+And $\forall w \in \mathcal{W}$ also has an unique linear combination of the vectors in $\tau(\mathfrak{B}_{\mathcal{V}})$. So all vectors in $\mathcal{V}$ have $w=\tau(v)$. So $\tau$
+is surjective. So $\tau$ is an isomorphism.
+For necessity of this. 
+\end{proof}
+
+\item[Problem 3](\textit{Corollary 2.9 in Roman}):\\
+Let $\tau \in \mathcal{L}(\mathcal{V},\mathcal{W})$ be a linear transformation from vector space $\mathcal{V}$ to vector space $\mathcal{W}$, where $\mathcal{V},\mathcal{W}$ are both finite dimensional vector spaces with $dim(\mathcal{V})=dim(\mathcal{W})$. Prove that $\tau$ is injective if and only if it is surjective.
+
+\begin{proof}
+aaa
+\end{proof}
+
+\end{description}
+
+\end{document}
