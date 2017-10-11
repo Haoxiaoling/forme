@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.9.20)  10 OCT 2017 19:01
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.9.20)  11 OCT 2017 16:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1208,14 +1208,14 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 LaTeX Font Info:    Try loading font information for U+euf on input line 67.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-) [2] (./homework4.aux) ) 
+) [2] [3] (./homework4.aux) ) 
 Here is how much of TeX's memory you used:
  19719 strings out of 492998
  397575 string characters out of 6134491
- 458634 words of memory out of 5000000
+ 461650 words of memory out of 5000000
  23570 multiletter control sequences out of 15000+600000
  537550 words of font info for 67 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 46i,8n,59p,10437b,393s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 46i,9n,59p,10437b,393s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on homework4.xdv (2 pages, 20224 bytes).
+Output written on homework4.xdv (3 pages, 30952 bytes).

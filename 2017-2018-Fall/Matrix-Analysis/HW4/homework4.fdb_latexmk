@@ -1,9 +1,9 @@
 # Fdb version 3
-["xdvipdfmx"] 1507633293 "homework4.xdv" "homework4.pdf" "homework4" 1507633293
-  "homework4.xdv" 1507633293 20224 d3ac53c796acff4a7bceaa5c077ebd34 "xelatex"
+["xdvipdfmx"] 1507710257 "homework4.xdv" "homework4.pdf" "homework4" 1507710257
+  "homework4.xdv" 1507710257 30952 00c6d2201a318c2a0d3b30519cad31b7 "xelatex"
   (generated)
   "homework4.pdf"
-["xelatex"] 1507633292 "homework4.tex" "homework4.xdv" "homework4" 1507633293
+["xelatex"] 1507710256 "homework4.tex" "homework4.xdv" "homework4" 1507710257
   "/usr/local/texlive/2017/texmf-dist/fonts/map/fontname/texfonts.map" 1480098670 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1480098698 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1480098698 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -83,8 +83,8 @@
   "/usr/local/texlive/2017/texmf-dist/web2c/texmf.cnf" 1494087824 32646 eadc4ca26cdbe7105ac7c593aa8c4f72 ""
   "/usr/local/texlive/2017/texmf-var/web2c/xetex/xelatex.fmt" 1505912626 3705020 16cf23335c705db07a658f87c42e04a7 ""
   "/usr/local/texlive/2017/texmf.cnf" 1505912597 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
-  "homework4.aux" 1507633293 8 a94a2480d3289e625eea47cd1b285758 ""
-  "homework4.tex" 1507633291 4891 874514c697d6834629530f4175e6455f ""
+  "homework4.aux" 1507710257 8 a94a2480d3289e625eea47cd1b285758 ""
+  "homework4.tex" 1507710256 7055 57a0ca292cf34a791d8e372d405c3a1c ""
   (generated)
   "homework4.xdv"
   "homework4.aux"

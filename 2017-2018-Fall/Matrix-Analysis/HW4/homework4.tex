@@ -2,7 +2,7 @@
 \usepackage{xeCJK}
 \usepackage{geometry}
 \geometry{left=2.5cm,right=2.5cm,top=3cm,bottom=3cm}
-\title{Homework n}
+\title{Matrix Analysis Homework 4}
 \author{龙肖灵 \\Xiaoling Long\\Student ID.:81943968\\email:longxl@shanghaitech.edu.cn}
 \usepackage{graphicx}
 \usepackage{amsmath, amsthm, amssymb}
@@ -77,16 +77,35 @@ Then we have that,
   \tau(v)=a_{1}\tau(v_{1})+a_{2}\tau(v_{2})+\cdots +a_{n}\tau(v_{n})
 \end{equation*}
 $\tau{\mathfrak{B}_{\mathcal{V}}}$ is a basis for $\mathcal{W}$. So $\forall v \in \mathcal{V}, \exists!\  w \in \mathcal{W}, \text{s.t.}\ \tau(v)=w$. So $\tau$ is injective.
-And $\forall w \in \mathcal{W}$ also has an unique linear combination of the vectors in $\tau(\mathfrak{B}_{\mathcal{V}})$. So all vectors in $\mathcal{V}$ have $w=\tau(v)$. So $\tau$
-is surjective. So $\tau$ is an isomorphism.
-For necessity of this. 
+And $\forall w \in \mathcal{W}$ also has an unique linear combination of the vectors in $\tau(\mathfrak{B}_{\mathcal{V}})$. So all vectors in $\mathcal{W}$ have $w=\tau(v)$. So $\tau$
+is surjective. So $\tau$ is an isomorphism.\\
+For necessity of this. $\tau$ is isomorphism means $\tau$ is injective and surjective. So, ker($\tau$)$=\{0\}$, and there doesn't exist a linear combination whose coefficients aren't all $0$.
+For all $w\in \mathcal{W}$, we have an unique $v\in \mathcal{V}$, $w=\tau(v)$. So, $$w=\tau(v)=\tau(a_{1}v_{1}+a_{2}v_{2}+\cdots +a_{n}v_{n})=a_{1}\tau(v_{1})+a_{2}\tau(v_{2})+\cdots +a_{n}\tau(v_{n})$$
+Only when all coefficients are $0$, $v=0$ and $w=\tau(v)=0$ . So $\tau(\mathfrak{B}_{\mathcal{V}})$ is linearly independent. And all $w$ has a linear combination of $\tau(v_{i})\in \tau(\mathfrak{B}_{\mathcal{V}})$, so it is a spanning set for $\mathcal{W}$. So $\tau\mathfrak{B}_\mathcal{V}$ is a basis for $\mathcal{W}$.
+
+All basis $\mathfrak{B}$ of $\mathcal{V}$ has simillar properities. Since $\tau$ is isomorphism, $\tau$ is injective and surjective. For all $w=\tau(v)$ can write as an unique linear combination with coefficients. And only when all coefficients are $0$, $w=0$. So $\tau(\mathfrak{B})$ is linearly independent and is a spanning set. Hence, $\tau$ maps any basis of $\mathcal{V}$ to a basis of $\mathcal{W}$.
 \end{proof}
 
 \item[Problem 3](\textit{Corollary 2.9 in Roman}):\\
 Let $\tau \in \mathcal{L}(\mathcal{V},\mathcal{W})$ be a linear transformation from vector space $\mathcal{V}$ to vector space $\mathcal{W}$, where $\mathcal{V},\mathcal{W}$ are both finite dimensional vector spaces with $dim(\mathcal{V})=dim(\mathcal{W})$. Prove that $\tau$ is injective if and only if it is surjective.
 
 \begin{proof}
-aaa
+Prove injective($\Rightarrow$). \\
+$\tau$ is surjective. So, im($\tau$)$=\mathcal{W}$. From theorem 2.8, we know that
+\begin{align*}
+  dim\left(ker\left(\tau\right)\right)+dim\left(im\left(\tau\right)\right)&=dim\left(\mathcal{V}\right)\\
+  dim\left(ker\left(\tau\right)\right)+dim\left(\mathcal{W}\right)&=dim\left(\mathcal{V}\right)
+\end{align*}
+And we know that $dim(\mathcal{V})=dim(\mathcal{W})$. So we can get that, $$dim\left(ker\left(\tau\right)\right)=0$$
+So $ker\left(\tau\right)$ must be $0$. So $\tau$ is injective.
+
+
+Prove surjective($\Leftarrow$).\\
+We have an injective $\tau$. So, $ker\left(\tau\right)=\{0\} $ and $dim\left(ker\left(\tau\right)\right)=0$. Also we have $$dim\left(ker\left(\tau\right)\right)+dim\left(im\left(\tau\right)\right)=dim\left(\mathcal{V}\right)$$
+So we can say $dim\left(im\left(\tau\right)\right)=dim\left(\mathcal{V}\right)=dim\left(\mathcal{W}\right)$. \\
+And we know that $im\left(\tau\right)\subseteq\mathcal{W}$ $\Rightarrow$\ $im\left(\tau\right)=\mathcal{W}$.
+Hence $\tau$ is surjective.\\
+Done.
 \end{proof}
 
 \end{description}
