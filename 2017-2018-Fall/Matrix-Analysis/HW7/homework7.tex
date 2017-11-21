@@ -1,0 +1,120 @@
+\documentclass[a4paper]{article}
+\usepackage{xeCJK}
+\usepackage{geometry}
+\geometry{left=2.5cm,right=2.5cm,top=3cm,bottom=3cm}
+\title{Matrix Analysis Homework 7}
+\author{龙肖灵 \\Xiaoling Long\\Student ID.:81943968\\email:longxl@shanghaitech.edu.cn}
+\usepackage{graphicx}
+\usepackage[colorlinks,linkcolor=red]{hyperref}
+\usepackage{amsmath, amsthm, amssymb}
+\usepackage{mathtools}
+\usepackage{subfloat}
+\usepackage{enumerate}
+\newtheorem{prop}{Proposition}
+\usepackage{ulem}
+\usepackage{indentfirst}
+
+\newenvironment{solution}
+  {\renewcommand\qedsymbol{$\blacksquare$}\begin{proof}[Solution]}
+  {\end{proof}}
+
+\begin{document}
+\maketitle
+
+\begin{description}
+  \item[Problem 1]:\\
+  Let $\mathcal{U}$ be a subspace of $\mathbb{R}^{m}$ of dimension $s$, and let
+$U=\left[u_{1},\cdots,u_{s}\right]\in \mathbb{R}^{m\times s}$ be an orthonormal basis for $\mathcal{U}$. Then $P_{\mathcal{U}}=UU^{T}$ is the orthogonal projection of $\mathbb{R}^{m}$ onto $\mathcal{U}$. Similarly, let $\mathcal{V}$ be a subspace of $\mathbb{R}^{n}$ of dimension $s$, let $V=\left[v_{1},\cdots,v_{s}\right]$ be an orthonormal basis for $\mathcal{V}$. Now, let $\mathcal{W}$ be the subspace of $\mathbb{R}^{m\times n}$ spanned by all matrices of the form $u_{i}x^{T}$, $yv_{j}^{T}$, where $i,j=1,\cdots,s $ and $x,y$ vary freely in $\mathbb{R}^{n}$,$\mathbb{R}^{m}$ respectively.
+\begin{enumerate}[i)]
+  \item What is the dimension of $\mathcal{W}$?
+  \item Find a formula for the orthogonal projection of $\mathbb{R}^{m\times n}$ onto $\mathcal{W}$ in terms of the orthogonal projections $P_{U}$,$P_{V}$ of $\mathbb{R}^{m}$ onto $\mathcal{U}$, and $\mathbb{R}^{n}$ onto $\mathcal{V}$ respectively.
+  \item Find a formula for the orthogonal projection onto $\mathcal{W}^{\perp}$.
+\end{enumerate}
+
+  \begin{solution}\
+    \begin{enumerate}[i)]
+      \item Extend the basis $U_{ex}=\left[u_{1},u_{2},\cdots,u_{s},u_{s+1},\cdots,u_{m}\right]$ to be the orthonormal basis for $\mathbb{R}^{m}$, and $V_{ex}=\left[v_{1},v_{2},\cdots,v_{s},v_{s+1},\cdots,v_{n}\right]$ to be the orthonormal basis for $\mathbb{R}^{n}$. So $x$ and $y$ can be linear combination of $V_{ex}$ and $U_{ex}$ respectively.
+      We can get that, $x=a_{1}v_{1}+a_{2}v_{2}+\cdots,a_{n}v_{n}$ and $y=b_{1}u_{1}+b_{2}u_{2}+\cdots+b_{m}u_{m}$.
+      For all $w \in \mathcal{W}$, we have that
+      \begin{align*}
+        w&=\sum_{i}^{s}\alpha_{i}u_{i}x^{T}+\sum_{j}^{s}\beta_{j}yv_{j}^{T}\\
+        &=\sum_{i}^{s}\alpha_{i}u_{i}(a_{1}v_{1}+a_{2}v_{2}+\cdots,a_{n}v_{n})^{T}+\sum_{j}^{s}\beta_{j}(b_{1}u_{1}+b_{2}u_{2}+\cdots+b_{m}u_{m})v_{j}^{T}\\
+        &=\sum_{k}^{n}\sum_{i}^{s}\alpha_{i}a_{k}u_{i}v_{k}^{T}+\sum_{l}^{m}\sum_{j}^{s}\beta_{j}b_{l}u_{l}v_{j}^{T}\\
+        :&=s+t
+      \end{align*}
+      So $\mathcal{W}=S+T$.And $u_{i}v_{k}^{T}\quad i=1,\cdots,s \ and\  k=1,\cdots,n$ are the spanning set for $S$. Now prove there are linearly independent. By contradiction, suppose they are linearly dependent. We have not all $\xi_{i,j}=0$,
+      \begin{align*}
+        \sum_{i}^{s}\sum_{j}^{n}\xi_{i,j}u_{i}v_{j}^{T}&=0\\
+        \sum_{j}^{n} (\sum_{i}^{s}\xi_{i,j}u_{i})v_{j}^{T}&=0\\
+        \sum_{j}^{n}U_{j}v_{j}^{T}&=0\\
+        \Longleftrightarrow \sum_{j}^{n}U_{j,i}v_{j}^{T}&=0 \quad \forall i
+      \end{align*}
+      Because that all $v_{i}$ are linearly independent. All $U_{j,i}=0$, which means $\sum_{i}^{s}\xi_{i,j}u_{i}=0$. So all coeffients $\xi_{i,j}=0$(Contradiction). So $u_{i}v_{k}^{T}\quad i=1,\cdots,s \ and\  k=1,\cdots,n$ are basis for $S$. Similarly evidence for $\sum_{i}^{s}\xi_{i,j}u_{i})=0$. So all coeffients $\xi_{i,j}=0$(Contradiction). \\
+      So $u_{j}v_{l}^{T}\quad j=1,\cdots,m \ and\  l=1,\cdots,s$ be a basis for $T$ and $u_{j}v_{l}^{T}\quad j=1,\cdots,s \ and\  l=1,\cdots,s$ be a basis for $S\cap T$.\\
+       So we can get these, $dim(S)=ns$ and $dim(T)=ms$ and $dim(S\cap T)=s^{2}$. \\
+      Finally, we can get the dimension of $\mathcal{W}$. $$dim(\mathcal{W})=dim{S+T}=dim{S}+dim{T}-dim(S\cap T)=ms+ns-s^2$$
+      \item The projection is that
+      \begin{align*}
+        P_{\mathcal{W}}(\mathcal{M})&=(I_{m}-P_{U})\mathcal{M}P_{V}+P_{U}\mathcal{M}(I_{n}-P_{V})+P_{U}\mathcal{M}P_{V}\\
+        &=P_{U}\mathcal{M}+\mathcal{M}P_{V}-P_{U}\mathcal{M}P_{V}
+      \end{align*}
+      Pick a $\mathcal{M} \in \mathbb{R}^{m\times n}$, we can write as $\mathcal{M}=\sum_{i}^{m}\sum_{j}^{n}\alpha_{i,j}u_{i}v_{k}^{T}$. We do projection $P_{mathcal{W}}$ on $\mathcal{M}$. We get that
+      \begin{align*}
+        P_{\mathcal{W}}(\mathcal{M})&=P_{U}\sum_{i}^{m}\sum_{j}^{n}\alpha_{i,j}u_{i}v_{j}^{T}+\sum_{i}^{m}\sum_{j}^{n}\alpha_{i,j}u_{i}v_{j}^{T}P_{V}-P_{U}\sum_{i}^{m}\sum_{j}^{n}\alpha_{i,j}u_{i}v_{j}^{T}P_{V}\\
+        &=\sum_{i}^{s}\sum_{j}^{n}\alpha_{i,j}u_{i}v_{j}^{T}+\sum_{i}^{m}\sum_{j}^{s}\alpha_{i,j}u_{i}v_{j}^{T}-\sum_{i}^{s}\sum_{j}^{s}\alpha_{i,j}u_{i}v_{j}^{T}\\
+        &=\sum_{i}^{s}\sum_{j}^{n}\alpha_{i,j}u_{i}v_{j}^{T}+\sum_{i=s+1}^{m}\sum_{j}^{s}\alpha_{i,j}u_{i}v_{j}^{T}
+      \end{align*}
+      \item And the projection onto $\mathcal{W}^{\perp}$ is that
+      \begin{align*}
+        P_{\mathcal{W}^{\perp}}(\mathcal{M})&=(I_{m}-P_{U})\mathcal{M}(I_{n}-P_{V})\\
+        &=\mathcal{M}-P_{\mathcal{W}}(\mathcal{M})
+      \end{align*}
+      So we also have that,
+      \begin{align*}
+        P_{\mathcal{W}^{\perp}}(\mathcal{M})&=\mathcal{M}-\sum_{i}^{s}\sum_{j}^{n}\alpha_{i,j}u_{i}v_{k}^{T}+\sum_{i=s+1}^{m}\sum_{j}^{s}\alpha_{i,j}u_{i}v_{j}^{T}\\
+        &=\sum_{i}^{m}\sum_{j}^{n}\alpha_{i,j}u_{i}v_{j}^{T}-\sum_{i}^{s}\sum_{j}^{n}\alpha_{i,j}u_{i}v_{j}^{T}-\sum_{i=s+1}^{m}\sum_{j}^{s}\alpha_{i,j}u_{i}v_{j}^{T}\\
+        &=\sum_{i=s+1}^{m}\sum_{j}^{n}\alpha_{i,j}u_{i}v_{j}^{T}-\sum_{i=s+1}^{m}\sum_{j}^{s}\alpha_{i,j}u_{i}v_{j}^{T}\\
+        &=\sum_{i=s+1}^{m}\sum_{j=s+1}^{n}\alpha_{i,j}u_{i}v_{j}^{T}
+      \end{align*}
+      So without loss of generality, we can put all dimension of $ms+ns-s^{2}$  first $ms+ns-s^{2}$ rows into a $m\times n $vector. So the $P_{\mathcal{W}^{\perp}}(\mathcal{M})$ can the last parts, so we have that
+      $$vec(P_{\mathcal{W}}(\mathcal{M}))vec(P_{\mathcal{W}^{\perp}}(\mathcal{M}))^{T}=\left[w_{1},\cdots,w_{ms+ns-s^{2}},0,\cdots,0\right][0,\cdots,0,w_{ms+ns-s^{2}},\cdots,w_{m\times n}]^{T}=0$$
+      So we have that $$P_{\mathcal{W}}(\mathcal{M}) \perp P_{\mathcal{W}^{\perp}}(\mathcal{M})$$
+    \end{enumerate}
+      Done.
+  \end{solution}
+
+  \item[Problem 2]:
+    \begin{enumerate}[i)]
+      \item  Let $U$ be an $n\times n$ unitary matrix. What can you say about $\sigma(U)$?
+      \item Let $P$ be an $n\times n$ real matrix representing the orthogonal projection of $\mathbb{R}^{n}$ onto a subspace $S$ of dimension $k$. Find $\sigma(P)$. What is the algebraic and geometric multiplicity of each eigenvalue?
+    \end{enumerate}
+
+  \begin{solution}\
+    \begin{enumerate}[i)]
+      \item From the theorem in the midterm we have that $trace(A)^{2}\le n\ trace(A^{T}A)$. So we can get that $$(\sum \sigma(U))^{2}\le n^{2}$$
+      Suppose that $(x,\lambda)$ be an eigenpair for $U$. We have that
+      \begin{align*}
+        Ux&=\lambda x\\
+        \|Ux\|&=\|\lambda x\|\\
+        x^{\ast}U^{\ast}Ux&=\|\lambda\|x^{\ast}x\\
+        x^{\ast}x&=\|\lambda\| x^{\ast}x\\
+        \|\lambda\|&=1
+      \end{align*}
+      \item Based on the defination of eigenpair, we have $Px=\lambda x$. And based on the defination of projection, we have that $\forall s\in S\to Ps=s$. And we know that $P^{2}=P$.
+      So we can get that,
+      \begin{align*}
+        Px&=\lambda x\\
+        PPx&=\lambda Px\\
+        Px&=\lambda^{2}x\\
+        \lambda x&=\lambda^{2}x
+      \end{align*}
+      So we can get $\lambda =0 \ or \ 1$. And let $B_{S}$ be the orthogonal basis of $s$, for all $s_{i}\in B_{s}$ we can get $Ps_{i}=s_{i}$. So all $s_{i}$ will be the eigenvector for eigenvalue of $1$. So for $\lambda=1$ the geometric multiplicity both are $k$. \\
+      And let $B_{S^{c}}$ be the basis for the complement of $S$. For all $s_{i}^{c}\in B_{S^{c}}$ we have that $Ps_{i}^{c}=0\times s_{i}^{c}$. So the geometric multiplicity for $\lambda=0$ are $n-k$.\\
+      And we know that $\tau_{g}(\lambda)\le\tau_{a}(\lambda)$ and $\tau_{a}(\lambda=0)+\tau_{a}(\lambda=1)=n$. So the algebraic multiplicity for $\lambda=0$ is $n-k$. And the algebraic multiplicity for $\lambda=1$ is $k$.
+     \end{enumerate}
+    Done.
+  \end{solution}
+
+\end{description}
+
+\end{document}

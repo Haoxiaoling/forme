@@ -1,0 +1,192 @@
+\documentclass[a4paper]{article}
+\usepackage{xeCJK}
+\usepackage{geometry}
+\geometry{left=2.5cm,right=2.5cm,top=3cm,bottom=3cm}
+\title{Matrix Analysis Homework 5}
+\author{龙肖灵 \\Xiaoling Long\\Student ID.:81943968\\email:longxl@shanghaitech.edu.cn}
+\usepackage{graphicx}
+\usepackage[colorlinks,linkcolor=red]{hyperref}
+\usepackage{amsmath, amsthm, amssymb}
+\usepackage{subfloat}
+\usepackage{enumerate}
+\newtheorem{prop}{Proposition}
+\usepackage{ulem}
+\usepackage{indentfirst}
+\begin{document}
+\maketitle
+
+\begin{description}
+\item[Problem 1]:\\
+Let $\sigma: U \rightarrow V, \tau: V\rightarrow W$ be linear
+transformations of finite dimensional vector spaces. Let $B$
+be an ordered basis for $U$ and $D$ an ordered basis for $W$.
+Prove that the representation of $\tau\circ\sigma :
+U\rightarrow W$ with respect to $B, D$ is given by matrix
+multiplication. \\
+\textit{Note: Prove this directly by computing this
+representation; the one line proof given in Roman is of
+course correct (it uses the commutativity of the diagrams)
+but it will not be accepted as an answer. }
+
+\begin{proof}
+  Let the odered bais $\mathcal{B}=(b_{1},\cdots,b_{n})$ for $\mathcal{U}$ ,the odered bais $\mathcal{D}=(d_{1},\cdots,d_{m})$ for $\mathcal{W}$ and $\mathcal{C}=(c_{1},\cdots,c_{l})$ be an ordered basis for $\mathcal{V}$.\\
+  We can know that, every linear transformation can map to a matrix over $\mathcal{F}$. So we can define that,
+  \begin{align*}
+    e_{i}&\in \mathcal{F}^{l}\\
+    \sigma(b_{j\in I_{B}})&=\sum_{i\in I_{C}}\alpha_{j,i}c_{i}\\
+    \mu(\sigma)=A_{l\times n}&=(\left[\sigma(b_{1})\right]_{C},\cdots,\left[\sigma(b_{n})\right]_{C})\\
+    \mu(\tau)=A_{m\times l}&=(\left[\tau(c_{1})\right]_{D},\cdots,\left[\tau(c_{l})\right]_{D})
+  \end{align*}
+  So we will show that $$\mu(\tau\circ\sigma)=\mu(\tau)\times \mu(\sigma)=A_{m\times l}\times A_{l\times n}=(\left[\tau\circ\sigma(b_{1})\right]_{D},\cdots,\left[\tau\circ\sigma(b_{n})\right]_{D})$$
+  \begin{align*}
+    A_{m\times l}\times A_{l\times n}&=(\left[\tau(c_{1})\right]_{D},\cdots,\left[\tau(c_{l})\right]_{D})\times (\left[\sigma(b_{1})\right]_{C},\cdots,\left[\sigma(b_{n})\right]_{C}) \\
+    &=(\sum_{i\in I_{C}} \left[\tau(c_{i})\right]_{D} e_{i}^{T} \left[\sigma(b_{1})\right]_{C},\cdots,\sum_{i\in I_{C}} \left[\tau(c_{i})\right]_{D} e_{i}^{T} \left[\tau(b_{n})\right]_{C}) \\
+    \sum_{i\in I_{C}} \left[\tau(c_{i})\right]_{D} e_{i}^{T} \left[\sigma(b_{j})\right]_{C}&=\left[\tau(c_{1})\right]_{D} e_{1}^{T} (\alpha_{j,1},\cdots,\alpha_{j,l})^{T}+\cdots+\left[\tau(c_{l})\right]_{D} e_{l}^{T} (\alpha_{j,1},\cdots,\alpha_{j,l})^{T}\\
+    &=\alpha_{j,1}\left[\tau(c_{1})\right]_{D}+\cdots +\alpha_{j,l}\left[\tau(c_{l})\right]_{D}
+    \intertext{$\phi_{D}$ and $\tau$ is a linear transformation.}
+    \sum_{i\in I_{C}} \left[\tau(c_{i})\right]_{D} e_{i}^{T} \left[\sigma(b_{j})\right]_{C}&=\left[\alpha_{j,1}\tau(c_{1})+\cdots+\alpha_{j,l}\tau(c_{l})\right]_{D}=\left[\tau\circ\sigma(b_{j})\right]_{D}\\
+    A_{m\times l}\times A_{l\times n}&=(\left[\tau\circ\sigma(b_{1})\right]_{D},\cdots,\left[\tau\circ\sigma(b_{n})\right]_{D})
+  \end{align*}
+  Done.
+\end{proof}
+
+\item[Problem 2]:\\
+Consider the map $\mu : \mathcal{L}(V, W)\rightarrow
+F^{m\times n}$ defined in class (and also in Theorem 2.15
+in Roman). Describe explicitly the inverse mapping $\lambda :
+F^{m\times n}\rightarrow \mathcal{L}(V, W)$ and explicitly
+prove that $\lambda\circ\mu(\tau) = \tau,
+ \forall\tau\in\mathcal{L}(V, W)$, as well as that
+ $\mu\circ\lambda(A) = A, \forall A\in F^{m\times n}$.
+
+\begin{proof}These two problem means that first define a mapping and prove it's isomorphism.
+  \begin{enumerate}
+    \item{Describe: Let $V$ and $W$ be finite-dimensional vector space over $F$, with ordered bases $\mathcal{B}=(b_{1},\cdots,b_{n})$ and $\mathcal{C}=(c_{1},\cdots,c_{m})$, respectively. Every matrix $A \in F^{m\times n}$ can define a linear transformation $\mathcal{L}(V,W)$, which is an change of basis matrix(P65 in Roman) from $\mathcal{B}$ to $\mathcal{C}$ .}
+    \item{Proof: $\phi_{B}$ and $\phi_{C}$ both are isomorphism.
+      Based on the diagram, we know that, $\mu(\tau)=\phi_{B}^{-1}\tau\phi_{C}$ and $\lambda(A)=\phi_{B}A\phi_{C}^{-1}$.
+      So we can say that,
+      \begin{align*}
+        \lambda\circ(\mu(\tau))&=\lambda(\phi_{B}^{-1}\tau\phi_{C})\\
+        &=\phi_{B}\phi_{B}^{-1}\tau\phi_{C}\phi_{C}^{-1}\\
+        &=\tau\\
+        \\
+        \mu\circ\lambda(A)&=\mu(\phi_{B}A\phi_{C}^{-1})\\
+        &=\phi_{B}^{-1}\phi_{B}A\phi_{C}^{-1}\phi_{C}\\
+        &=A
+      \end{align*}
+      Actually, $\mu$ is isomophism as well. So if $\lambda=\mu^{-1}$. Statement can always stand.
+    }
+  \end{enumerate}
+\end{proof}
+
+\item[Problem 3]:\\
+i) Let $V = S\oplus T$. Show that $\rho_{S,T} +
+\rho_{T,S} = id_\mathcal{L(V, V)}$. This decomposition
+of the identity map is called a resolution of the identity.\\
+ii) Show that $im(\rho_{S,T}) = S$ and $ker(\rho_{S,T})
+= T$.\\
+iii) Show that for an element $v\in V$ we have that $v\in
+im(\rho_{S,T})\Leftrightarrow\rho_{S,T}(v) = v$.
+
+
+\begin{proof} \
+  \begin{enumerate}[ i) ]
+    \item $\forall v=s+t \in \mathcal{V}$, we have that,
+    \begin{align*}
+      [\rho_{S,T}+\rho_{T,S}](v)&=\rho_{S,T}(s+t)+\rho_{T,S}(s+t)\\
+      &=s+t\\
+      &=v\\
+      &=id_{\mathcal{L(V,V)}}(v)
+    \end{align*}
+    So we can say that $\rho_{S,T} + \rho_{T,S} = id_\mathcal{L(V, V)}$.
+    \item For all $v=s+t \in \mathcal{V}$ and, we have $\rho_{S,T}(v)=s\in S$\quad $\Rightarrow$\quad$im(\rho_{S,T})\subset \mathcal{S}$.\\
+    And for all $s\in \mathcal{S}$, we still have that $\rho_{S,T}(s)=s$ \quad $\Rightarrow$\quad $\mathcal{S}\subset im(\rho_{S,T})$.\\
+    Hence, we must have $$im(\rho_{S,T}) = S$$
+    For all $v=s+t \in \mathcal{V}$ and $v\in ker(\rho_{S,T})$, we have $\rho_{S,T}(v)=s=0$, so $v=s+t=t \in \mathcal{T}$\quad $\Rightarrow$\quad $ker(\rho_{S,T})\subset \mathcal{T}$.\\
+    And for all $t\in \mathcal{T}$, we still have that $\rho_{S,T}(t)=0$ \quad $\Rightarrow$ \quad $\mathcal{T}\subset ker(\rho_{S,T})$.\\
+    So $$ker(\rho_{S,T})=\mathcal{T}$$
+    \item For all $v=s+t\in im(\rho_{S,T}=\mathcal{S})\quad \to v=s$,$$\rho_{S,T}(v)=s=v$$
+    And we know that $\forall v=s+t\in \mathcal{V} \to \rho_{S,T}(v)=s=v$. So we can say that $v\in \mathcal{S}$. Hence,
+    $$v\in im(\rho_{S,T})$$
+  \end{enumerate}
+  Done.
+\end{proof}
+
+\item[Problem 4]:\\
+Consider the setting of Example 2.5 in Roman. Verify all claims in this example, i.e., prove that\\
+i) $\rho_{D,X}\rho_{D,Y} = \rho_{D,Y} \neq \rho_{D,X} = \rho_{D,Y} \rho_{D,X}$\\
+ii) $\rho_{Y,X}\rho_{X,D} = 0$\\
+iii) $\rho_{X,D}\rho_{Y,X}$ is not a projection.
+
+
+\begin{proof}\
+  \begin{enumerate}[ i) ]
+    \item Let $v=(x,y)$. Based on $X, Y\to v=(x,0)+(0,y)$. Based on $D, X\to v=(x-y,0)+(y,y)$ and based on $D, Y\to v=(x,x)+(0,y-x)$.
+    \begin{align*}
+      [\rho_{D,X}\rho_{D,Y}](v)&=\rho_{D,X}(\rho_{D,Y}(v))\\
+      &=\rho_{D,X}(\rho_{D,Y}((x,x)+(0,y-x)))\\
+      &=\rho_{D,X}((x,x)+(0,0))\\
+      &=(x,x)\\
+      \rho_{D,Y}(v)&=\rho_{D,Y}((x,x)+(0,y-x))\\
+      &=(x,x)\\
+      [\rho_{D,Y}\rho_{D,X}](v)&=\rho_{D,Y}(\rho_{D,X}(v))\\
+      &=\rho_{D,Y}(\rho_{D,X}((y,y)+(x-y,0))\\
+      &=\rho_{D,Y}((y,y)+(0,0))\\
+      &=(y,y)\\
+      \rho_{D,X}(v)&=\rho_{D,X}((y,y)+(x-y,0))\\
+      &=(y,y)
+    \end{align*}
+    So we can get that $$\rho_{D,X}\rho_{D,Y} = \rho_{D,Y} \neq \rho_{D,X} = \rho_{D,Y} \rho_{D,X}$$
+    \item For all $v=(x,y)$ we always have that
+    $$[\rho_{Y,X}\rho_{X,D}](v)=\rho_{Y,X}(\rho_{X,D}((y,y))=\rho_{Y,X}((x-y,0)+(0,0))=(0,0)=0$$
+    So $\rho_{Y,X}\rho_{X,D}$ map all $v$ to $0$. Hence, $\rho_{Y,X}\rho_{X,D} = 0$.
+    \item We do same things, for all $v=(x,y)$, we can get that,
+    \begin{align*}
+      [\rho_{X,D}\rho_{Y,X}](v)&=\rho_{X,D}(\rho_{Y,X}((x+y)))\\
+      &=\rho_{X,D}((0,y))\\
+      &=\rho_{X,D}((y,y)+(-y,0))\\
+      &=(-y,0)\\
+      [\rho_{X,D}\rho_{Y,X}\rho_{X,D}\rho_{Y,X}](v)&=\rho_{X,D}\rho_{Y,X}((-y,0))\\
+      &=\rho_{X,D}((0,0))\\
+      &=0\neq [\rho_{X,D}\rho_{Y,X}](v)
+    \end{align*}
+    So $\rho_{X,D}\rho_{Y,X}$ is not a projection.
+  \end{enumerate}
+\end{proof}
+
+\item[Problem 5]:\\
+Let $\rho, \sigma\in\mathcal{L}(V,V)$ be projections. Show that if $\rho, \sigma$ commute, i.e., that $\rho\sigma = \sigma\rho$, then $\rho\sigma$ is a projection. In that case, show that $im(\rho\sigma) = im(\rho)\cap im(\sigma)$ and $ker(\rho\sigma) = ker(\rho) + ker(\sigma)$.
+
+
+\begin{proof}\
+  \begin{enumerate}[ 1) ]
+    \item $\rho\sigma\rho\sigma=\sigma\rho\rho\sigma=\sigma\rho\sigma=\rho\sigma\sigma=\rho\sigma$. So, $\rho\sigma$ is idempotent. Hence, it is a projection.
+    \item Let $\rho$ be $\rho_{S,T}$ and $\sigma$ be $\sigma_{A,B}$. For all $v=s+t=a+b \in \mathcal{V}$, so we have that,
+    \begin{align*}
+      \rho_{S,T}\sigma_{A,B}(v)&=\rho_{S,T}(a)\in im(\rho)\\
+      \rho_{S,T}\sigma_{A,B}(v)&=\sigma_{A,B}\rho_{S,T}(v)=\sigma_{A,B}(s)\in im(\sigma)\\
+      \Rightarrow \quad im(\rho\sigma)&\subset im(\rho)\cap im(\sigma)
+    \end{align*}
+    And for all $v\in im(\rho)\cap im(\sigma)$, we have that $$\rho(v)=v\quad \sigma(v)=v$$
+    So we can say that $\rho\sigma(v)=v$, then we can get $im(\rho)\cap im(\sigma)\subset im(\rho\sigma)$.\\
+    Hence, $im(\rho\sigma) = im(\rho)\cap im(\sigma)$.
+    \item For all $v \in ker(\rho)$, we have that $\rho_{S,T}\sigma_{A,B}(v)=\sigma_{A,B}\rho_{S,T}(v)=\sigma_{A,B}(0)=0$.\\
+    And for all $v \in ker(\sigma)$, we have that $\rho_{S,T}\sigma_{A,B}(v)=\rho_{S,T}(0)=0$, \\
+    So, $ker(\rho)+ker(\sigma)\subset ker(\rho\sigma)$.\\
+    Based on defination of projection, let for all $v=a+b=s+t \in ker(\rho\sigma)$,
+    So we have that
+    \begin{align*}
+      \rho_{S,T}\sigma_{A,B}(v)&=\rho_{S,T}(a)\\
+      \to a \in ker(\rho_{S,T})&=T\\
+      \rho_{S,T}\sigma_{A,B}(v)&=\sigma_{A,B}\rho_{S,T}(v)\\
+      &=\sigma_{A,B}(s)\\
+      \to s \in ker(\sigma_{A,B})&=B
+    \end{align*}
+    However we can we can re-write $v=a+b=s+t=b+t$. So $ker(\rho\sigma)\subset ker(\rho)+ker(\sigma)$.\\
+    Hence, $$ker(\rho\sigma)=ker(\rho)+ker(\sigma)$$
+  \end{enumerate}
+\end{proof}
+
+\end{description}
+
+\end{document}

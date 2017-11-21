@@ -1,0 +1,162 @@
+\documentclass[a4paper]{article}
+\usepackage{xeCJK}
+\usepackage{geometry}
+\geometry{left=2.5cm,right=2.5cm,top=3cm,bottom=3cm}
+\title{Matrix Analysis Homework 6}
+\author{龙肖灵 \\Xiaoling Long\\Student ID.:81943968\\email:longxl@shanghaitech.edu.cn}
+\usepackage{graphicx}
+\usepackage[colorlinks,linkcolor=red]{hyperref}
+\usepackage{amsmath, amsthm, amssymb}
+\usepackage{mathtools}
+\usepackage{subfloat}
+\usepackage{enumerate}
+\newtheorem{prop}{Proposition}
+\usepackage{ulem}
+\usepackage{indentfirst}
+\begin{document}
+\maketitle
+
+\begin{description}
+  \item[Problem 1]:\\
+  Let $A,B\in\mathbb{R}^{n\times n}$ be square matrices. Show that\\
+  $max\{dim\mathcal{N}(A),dim\mathcal{N}(B)\}\leq dim\mathcal{N}(AB)\leq dim\mathcal{N}(A)+dim\mathcal{N}(B)$
+
+  \begin{proof}
+    Divided into two parts.
+    \begin{enumerate}[1)]
+      \item $dim\mathcal{N}(AB)\leq dim\mathcal{N}(A)+dim\mathcal{N}(B)$:
+      \begin{align*}
+        dim\mathcal{N}(AB)&=n-rank(AB)\\
+        &\leq n-(rank(A)+rank(B)-n)\\
+        &=n-rank(A)+n-rank(B)\\
+        &=dim\mathcal{N}(A)+dim\mathcal{N}(B)
+      \end{align*}
+      \item $max\{dim\mathcal{N}(A),dim\mathcal{N}(B)\}\leq dim\mathcal{N}(AB)$:
+      \begin{align*}
+        dim\mathcal{N}(AB)&=n-rank(AB)\\
+        &\ge n-min(rank(A),rank(B))\\
+        &=max(dim\mathcal{N}(A),dim\mathcal{N}(B))
+      \end{align*}
+    \end{enumerate}
+          So we can get that, $max\{dim\mathcal{N}(A),dim\mathcal{N}(B)\}\leq dim\mathcal{N}(AB)\leq dim\mathcal{N}(A)+dim\mathcal{N}(B)$.\\
+          Done.
+  \end{proof}
+
+  \item[Problem 2]:\\
+   Let $u,v\in\mathbb{R}^{n\times 1}$ be two column vectors such that $u^Tv\neq 1$. Let $\mathcal{I}$ be the $n\times n$ identity matrix. Compute a basis for the nullspace of $A\coloneqq \mathcal{I} - uv^T$. Or if $\mathcal{N}(A) = 0$, prove that $A$ is invertible, and compute $A^{-1}$
+
+  \begin{proof}\
+    \begin{enumerate}
+      \item     We take one element $x \in \mathcal{N}(A)$, Then we can get $uv^{T}x=x$. So $x$ is a eigenvector when $\lambda=1$. And we know that $rank(uv^{T})=1$ and $\sum_{i}\lambda_{i}=trace(uv^{T})=u^{T}v$. $\lambda$ just have two values whatever the dimension of $uv^{T}$ is.
+          \begin{equation*}
+            \lambda=0 \quad or\quad \lambda=u^{T}v\ne 1
+          \end{equation*}
+          So there doesn't exist this eigenvector. So $x$ just can equal to $0$. It means $\mathcal{N}(A)=0$. the nullspace of $A$ is empty set.
+      \item $\mathcal{N}(A)=0\Rightarrow dim\mathcal{N}(A)=0\Rightarrow rank(A)=n-dim\mathcal{N}(A)=n\Rightarrow A$ is invertible.
+      Let $B\coloneqq uv^{T}$, then we can get that $BB=uv^{T}uv^{T}=v^{T}uuv^{T}=v^{T}uB$.
+      Let $A^{-1}=\alpha I+\beta B$.
+      \begin{align*}
+        (I-B)(\alpha I+\beta B)&=I\\
+        \alpha I +\beta IB-\alpha BI-\beta BB&=I\\
+        \alpha I +(\beta-\alpha-\beta v^{T}u )B&=I\\
+        \Rightarrow \alpha&=1\\
+        (\beta-\alpha-\beta v^{T}u )&=0\\
+        \Rightarrow \beta=&\frac{1}{1-v^{T}u}
+      \end{align*}
+      So, $A^{-1}=I+\frac{uv^{T}}{1-v^{T}u}$. Let verify in another direction.
+      \begin{align*}
+        A^{-1}A&=(I+\frac{uv^{T}}{1-v^{T}u}) \times (I - uv^{T})\\
+        &=I +\frac{uv^{T}}{1-v^{T}u}-uv^{T}-\frac{uv^{T}uv^{T}}{1-v^{T}u}\\
+        &=I+\frac{v^{T}uuv^{T}}{1-v^{T}u}-\frac{uv^{T}uv^{T}}{1-v^{T}u}\\
+        &=I\quad (uv^{T}uv^{T}=v^{T}uuv^{T})
+      \end{align*}
+    \end{enumerate}
+    Done.
+  \end{proof}
+
+  \item[Problem 3]:\\
+   Let $A\in\mathbb{R}^{m\times n}$ be matrix with $rank(A) = r$.
+  Prove in two different ways that there exist matrices $B\in\mathbb{R}^{m\times r},C\in\mathbb{R}^{r\times n}$, such that $A=BC$. You may only use arguments that we have developed in the class so far.\\
+  Hint: For the first proof, try to write the linear transformation $\tau_A:\mathbb{R}^n\to\mathbb{R}^m$ as a composition of two linear transformations $\phi,\psi$ in the form
+  $\tau_A:\mathbb{R}^n\xrightarrow{\phi}\mathbb{R}^r\xrightarrow{\psi}\mathbb{R}^m$. For the second proof, $B$ should contain in its columns the basis for some space (which space?).
+
+  \begin{proof}
+      We can show that based on propoties of linear transformation and matrix mutiplication.
+      \begin{enumerate}[1)]
+        \item Let $\tau_{A}: \mathbb{R}^{n}\to\mathbb{R}^{m}$. There exists $\phi_{C}:\mathbb{R}^{n}\to\mathbb{R}^{r}$ and $\psi_{B}:\mathbb{R}^{r}\to\mathbb{R}^{m}$, such that $\tau_{A}=\psi_{B}\phi_{C}$. $P, Q, R$ are the ordered basis for $\mathbb{R}^{n},\mathbb{R}^{r},\mathbb{R}^{m}$ respectively.\\
+        We know that $A=[\tau_{A}]_{P,R}=[\psi_{B}\phi_{C}]_{P,R}=[\psi_{B}]_{Q,R}[\phi_{C}]_{P,Q}=BC$ from Theorem 2.15 in Roman. So we can get that $A=BC$.
+        \item Same as problem 1 in Homework 5. Let $B=(B_{1},\cdots,B_{r})\in \mathbb{R}^{m\times r}$ be a basis for $\mathbb{R}^{r}$. And we know $rank{A}=r$, supose $A=(A_{1},\cdots,A_{n})$. So,
+            $$A_{i}=\sum_{j=0}^{r}B_{j}c_{i,j}$$
+            Let
+            \begin{equation*}
+              C=\left(
+              \begin{matrix}
+                c_{1,1}&c_{1,2}&\cdots&c_{1,n}\\
+                c_{2,1}&c_{2,2}&\cdots&c_{2,n}\\
+                \vdots&\vdots&\ddots&\vdots\\
+                c_{r,1}&c_{r,2}&\cdots&c_{r,n}
+              \end{matrix}
+              \right)
+            \end{equation*}
+            So we can get that $A=BC$.
+      \end{enumerate}
+      Done.
+  \end{proof}
+
+  \item[Problem 4]:\\
+   Let $\|\cdot\|:\mathbb{R}^{m\times n}\to\mathbb{R}$ be a matrix norm induced by the vector norm $\|\cdot\|$.Let $A$ be an invertible matrix. Prove that $\|A^{-1}\|=(min_{\|x\|=1}\|Ax\|)^{-1}$.
+
+  \begin{proof}
+    To prove that, we must know $\left\|\frac{a}{\|a\|}\right\|=1, if a\ne 0$.
+    \begin{align*}
+      \|A^{-1}\|&=max_{\|x\|=1}\|A^{-1}x\|\\
+      &=max_{y\ne 0}\left\| A^{-1}\frac{y}{\|y\|}\right\| \\
+      &=max_{y\ne 0}\left\| \frac{A^{-1}y}{\|y\|}\right\| \\
+      &=max_{y\ne 0}\frac{\|A^{-1}y\|}{\|y\|}\\
+      &=max_{y\ne 0}\frac{\|A^{-1}y\|}{\|AA^{-1}y\|}\\
+      &=\frac{1}{min_{y\ne 0}\left\| \frac{A(A^{-1}y)}{\|A^{-1}y\|}\right\|}\\
+      &=\frac{1}{min_{\|x\|=1}\|Ax\|}
+    \end{align*}
+    Finally, we get that $\|A^{-1}\|=\frac{1}{min_{\|x\|=1}\|Ax\|}$.\\
+    Done.
+  \end{proof}
+
+  \item[Problem 5]:\\
+   There is something wrong with statement (5.2.13) p.283 in Meyer. What is it, and why is it wrong? How can you fix it?
+
+  \begin{proof}
+    The condition should be $VV^{*}=I$. We want to show that $\|AV\|_{2}=\|A\|_{2}$.
+    \begin{align*}
+      \|AV\|_{2}^{2}&=\|(AV)^{*}\|_{2}^{2} \\
+      &=\|V^{*}A^{*}\|_{2}^{2}\\
+      &=max_{\|x\|_{2}=1}\|V^{*}A^{*}x\|_{2}^{2}\\
+      &=max_{\|x\|_{2}=1} x^{*}AVV^{*}A^{*}x\\
+      \|A\|_{2}^{2}&=\|A^{*}\|_{2}^{2}\\
+      &=max_{\|x\|_{2}=1}\|A*x\|_{2}^{2}\\
+      &=max_{\|x\|_{2}=1}x^{*}AA^{*}x
+    \end{align*}
+    So just $VV^{*}=I$ can get $\|AV\|_{2}=\|A\|_{2}$. So we must change the condition to $VV^{*}=I$.
+  \end{proof}
+
+  \item[Problem 6]:\\
+   Given a vector norm $\|\cdot\|:\mathbb{R}^{n}\to\mathbb{R}$ define the dual norm $\|\cdot\|^D:\mathbb{R}^{n}\to\mathbb{R}$ by $\|x\|^D\coloneqq max_{\|y\|=1}|x^Ty|$. Show that the dual norm is a norm. show that \\
+  $\|\cdot\|_2^D=\|\cdot\|_2,\|\cdot\|_1^D=\|\cdot\|_\infty,\|\cdot\|_\infty^D=\|\cdot\|_1$.
+
+  \begin{proof}\
+    \begin{enumerate}[1)]
+      \item $\|\cdot\|_2^D=\|\cdot\|_2$:
+      \begin{enumerate}[(a)]
+        \item if $x=0$, $\|0\|_2^D=\|0\|_2$.
+        \item if $x\ne 0$, we know that $cos\theta=\frac{<x|y>}{\|x\|_{2}\|y\|_{2}}$, and $\|y\|_{2}=1$, we can get that $<x|y>=\|x\|_{2}cos\theta$. When $y=\alpha x$, $<x|y>$ can get the max. So let $y=\frac{x}{\|x\|}$.
+          $$\|x\|_{2}^{D}=max_{\|y\|_{2}=1}|x^{T}y|=\left|x^{T}\frac{x}{\|x\|_{2}}\right|=\|x\|_2$$
+      \end{enumerate}
+      \item $\|\cdot\|_1^D=\|\cdot\|_\infty$:\\
+        $\|x\|_{1}^{D}=max_{\|y\|_{1}=1}|x^{T}y|$. When $y=e_{i}$, such that $x_{i}=max{x_{i}}$, euqation get the maximum value. So $\|x\|_{1}^{D}=max|x_{i}|$. Hence, $$\|\cdot\|_1^D=\|\cdot\|_\infty$$
+      \item $\|\cdot\|_\infty^D=\|\cdot\|_1$:\\
+        $\|x\|_{\infty}^{D}=max_{\|y\|_{\infty}=1}|x^{T}y|$. When $x_{i}<0$ ,$y_{i}=-1$ and $x_{i}>0$,$y_{i}=1$, $\|x\|_{\infty}^{D}$ get the maximum. And $\|x\|_{\infty}^{D}=|x^{T}y|=\sum_{i}|x_{i}|$. Hence, $$\|\cdot\|_\infty^D=\|\cdot\|_1$$
+    \end{enumerate}
+  \end{proof}
+
+\end{description}
+
+\end{document}

@@ -1,0 +1,133 @@
+\documentclass[a4paper]{article}
+\usepackage{xeCJK}
+\usepackage{geometry}
+\geometry{left=2.5cm,right=2.5cm,top=3cm,bottom=3cm}
+\title{Matrix Analysis Homework 7}
+\author{龙肖灵 \\Xiaoling Long\\Student ID.:81943968\\email:longxl@shanghaitech.edu.cn}
+\usepackage{graphicx}
+\usepackage[colorlinks,linkcolor=red]{hyperref}
+\usepackage{amsmath, amsthm, amssymb}
+\usepackage{mathtools}
+\usepackage{subfloat}
+\usepackage{stmaryrd}
+\usepackage{enumerate}
+\newtheorem{prop}{Proposition}
+\usepackage{ulem}
+\usepackage{indentfirst}
+\begin{document}
+\maketitle
+
+\begin{description}
+  \item[Problem 1]:\\
+  Let $A$,$B$ be positive-semidefinite matrices. Show that all eigenvalues of $AB$ are non-negative.
+   Is it true that $AB$ is positive-semidefinite? Justify your answer.
+
+  \begin{proof}\
+    \begin{enumerate}[i)]
+      \item
+      Pick an eigenpair $(x,\lambda)$ of $AB$. We have that
+      \begin{align*}
+        ABx&=\lambda x\\
+        x^{T}B^{T}(ABx)&=\lambda x^{T}B^{T}x\\
+        (Bx)^{T}A(Bx)&=\lambda x^{T}Bx\\
+        (x^{\prime})^{T}Ax^{\prime}&=\lambda x^{T}Bx
+      \end{align*}
+      And we know that $A$ and $B$ are positive-semidefinite matrix, for all $x\in R^{n}$ and $x^{\prime}\in R^{n}$, such that $x^{T}Bx\ge 0$ and $(x^{\prime})^{T}Ax^{\prime}\ge 0$. So $\lambda x^{T}Bx \ge 0\Rightarrow \lambda\ge 0$.
+      So, all eigenvalues of $AB$ are non-negative.
+      \item Not always true that $AB$ is positive-semidefinite. $(AB)^{T}=B^{T}A^{T}=BA\ne AB$. Since there isn't enought condition to ensure that $AB$ is a symmetric matrix.
+    \end{enumerate}
+    Done.
+  \end{proof}
+
+  \item[Problem 2]:\\
+   Let $A$,$B$ be positive-semidefinite matrices. Show that $\interleave A-B\interleave _{2}\le \max\{\interleave A\interleave_{2},\interleave B\interleave_{2}\}$.
+
+  \begin{proof}\ \\
+    Let $C$ be a positive-semidefinite matrix, pick an eigenpair $(x,\lambda)$ of $C$. Then,
+    \begin{align*}
+      Cx&=\lambda x\\
+      C^{T}Cx&=\lambda Cx\\
+      C^{T}Cx&=\lambda \lambda x\\
+      C^{T}Cx&=\lambda^{2}x
+    \end{align*}
+    So the eigenvalues of $C^{T}C$ equal the eigenvalues of $C$ power $2$. And all eigenvalues of $C$ are non-negative, so $\|C\|_{2}=\sqrt{\lambda_{\max}(C^{T}C)}=\max{|\lambda(C)|}$.
+    Since $(A-B)^{T}=A-B$, so there are two cases
+    \begin{enumerate}[i)]
+      \item $|\lambda_{\max}(A-B)|\ge |\lambda_{\min}(A-B)|$: $$\interleave A-B\interleave_{2}=\max\limits_{\|x\|_{2}=1}x^{T}(A-B)x=\max\limits_{\|x\|_{2}}(x^{T}Ax-x^{T}Bx)\le \max\limits_{\|x\|_{2}}x^{T}Ax=\lambda_{\max}(A)=\interleave A\interleave_{2}$$
+      \item $|\lambda_{\max}(A-B)|< |\lambda_{\min}(A-B)|$:$$\interleave A-B\interleave_{2}=\max\limits_{\|x\|_{2}=1}x^{T}(B-A)x=\max\limits_{\|x\|_{2}}(x^{T}Bx-x^{T}Ax)\le \max\limits_{\|x\|_{2}}x^{T}Bx=\lambda_{\max}(B)=\interleave B\interleave_{2}$$
+    \end{enumerate}
+    Finally, we can say that $$\interleave A-B\interleave _{2}\le \max\{\interleave A\interleave_{2},\interleave B\interleave_{2}\}$$
+    Done.
+  \end{proof}
+
+  \item[Problem 3]:\\
+  Show that the set of all positive-semidefinite matrices of size $n\times n$ is a convex cone of $\mathbb{R}^{n\times n}$ (you need to read up the definition of "convex cone").
+
+  \begin{proof}
+    \textit{Terminology: A cone $C$ is a convex cone if $\alpha x + \beta y$ belongs to $C$, for any positive scalars $\alpha$, $\beta$, and any $x$, $y$ in $C$.}\\
+    For all $A$ and $B$ in the set of all positive-semidefinite matrices $\mathcal{C}$ of size $n\times n$. We have that for all $x\in R^{n}$ , such that $x^{T}Ax\ge 0$ and $x^{T}Bx\ge 0$.\\
+    For any positive scalars $\alpha$ and $\beta$.
+    \begin{align*}
+      x^{T}Ax\ge 0 \quad & x^{T}Bx\ge 0\\
+      \alpha x^{T}Ax\ge 0 \quad & \beta x^{T}Bx\ge 0\\
+      x^{T}\alpha A x\ge 0 \quad & x^{T}\beta Bx\ge 0\\
+      x^{T}\alpha Ax+x^{T}\beta Bx &\ge 0\\
+      x^{T}(\alpha A+\beta B)x&\ge 0
+    \end{align*}
+    It means that for all $x\in R^{n}$for any positive scalars $\alpha$ and $\beta$, for any $A$, $B$ in $\mathcal{C}$, $x^{T}(\alpha A+\beta B)x\ge 0 $ alwways remains. So $\alpha A +\beta B$ belongs to $\mathcal{C}$.\\
+    So $\mathcal{C}$ is a convex cone of $R^{n\times n}$.\\
+    Done.
+  \end{proof}
+
+  \item[Problem 4]:\\
+  Let $A\in \mathbb{R}^{n\times n}$ be positive-semidefinite. Let $B\in \mathbb{R}^{n\times k}$ be any matrix. Show that the matrix $B^{T}AB$ is positive-semidefinite.
+
+  \begin{proof}\ \\
+    Since $A\ge 0$, so we can say that $\exists C \in R_{n\times n}$ such that $A=C^{T}C$. So we can do these as following,
+    \begin{align*}
+      x^{T}B^{T}ABx&=x^{T}B^{T}C^{T}CBx\\
+      &=(CBx)^{T}CBx\\
+      &=\|CBx\|_{2} \\
+      &\ge 0
+    \end{align*}
+    Finally, we get that $x^{T}B^{TAB}x\ge 0$. So the matrix $B^{T}AB$ is positive-simidefinite.
+  \end{proof}
+
+  \item[Problem 5]:\\
+   Let $A\in \mathbb{R}^{n\times n}$ be positive-semidefinite. Show that for every distinct $i\ne j$ we have that $a_{ii}a_{jj}\ge a_{ij}^{2}$.
+
+  \begin{proof}\ \\
+    Since $A\ge 0$, so we know that every principal minor of $A$ is greater than or equal to $0$. So When we remove all columns and rows whose indices not equal to $i$ and $j$. The principal will be
+    $A(i,j)=\begin{pmatrix}
+      a_{ii} & a_{ij}\\
+      a_{ji} & a_{jj}
+    \end{pmatrix}$. And $det(A(i,j))\ge 0$, then we can get that $a_{ii}a_{jj}-a_{ij}a_{ji}\ne 0$. That $A\ge 0$ implies that $A=A^{T}$ which means that $a_{ij}=a_{ji}$. Finally we can get that $$a_{ii}a_{jj}\ge a_{ij}^{2}$$
+    Done.
+  \end{proof}
+
+  \item[Problem 6]:\\
+    Let $A\in \mathbb{R}^{n\times n}$ be symmetric, strictly diagonally dominant, and suppose that $a_{ii}>0$. Prove that $A$ is positive-definite.
+
+  \begin{proof}\ \\
+      From \textit{Gerschgorin Circles theorem}, all $\lambda_{i} \in \sigma{A}$ are in the $i-th$ Gerschgorin Circle defined by $$|z-a_{ii}|\le \sum\limits_{j=1\atop j\ne i}^{n}|a_{ij}|$$
+      And $A$ is strict diagonally dominant. It means that $a_{ii}> \sum\limits_{j=1\atop j\ne i}^{n}|a_{ij}|$ and $a_{ii}>0$.
+      \begin{align*}
+      & \qquad\qquad  |z-a_{ii}|\le \sum\limits_{j=1\atop j\ne i}^{n}|a_{ij}|\\
+      &\Rightarrow  -\sum\limits_{j=1\atop j\ne i}^{n}|a_{ij}|<z-a_{ii}<\sum\limits_{j=1\atop j\ne i}^{n}|a_{ij}|\\
+      &\Rightarrow  a_{ii}-\sum\limits_{j=1\atop j\ne i}^{n}|a_{ij}|<z<a_{ii}+\sum\limits_{j=1\atop j\ne i}^{n}|a_{ij}|
+      \end{align*}
+      It implies that all elements in the circle are greater than $0$. It also implies that $\lambda_{i}>0$. \\
+      And we also can get these
+      \begin{align*}
+        Ax&=\lambda x\\
+        x^{T}Ax&=\lambda x^{T}x\\
+        &=\lambda \|x\|_{2}
+      \end{align*}
+      For all $x^{T}x\ne 0$, we always get that $x^{T}Ax=\lambda \|x\|_{2}>0$, and $A$ also is symmetric matrix.\\
+       So $A$ is positive-definite.\\
+       Done.
+  \end{proof}
+
+\end{description}
+
+\end{document}
