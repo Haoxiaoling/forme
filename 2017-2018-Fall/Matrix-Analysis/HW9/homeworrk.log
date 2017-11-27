@@ -1,10 +1,10 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.9.20)  22 NOV 2017 17:10
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.9.20)  27 NOV 2017 13:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**homework8.tex
-(./homework8.tex
+**homeworrk.tex
+(./homeworrk.tex
 LaTeX2e <2017-04-15>
 Babel <3.13> and hyphenation patterns for 84 language(s) loaded.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/article.cls
@@ -1225,8 +1225,8 @@ Package: CJKfntef 2015/04/18 4.8.4
 . Redefining environment 'CJKfilltwosides' with sig. 'O{c}m' on line 1016.
 .................................................
 \c__xeCJK_filll_skip=\skip69
-) (./homework8.aux)
-\openout1 = `homework8.aux'.
+) (./homeworrk.aux)
+\openout1 = `homeworrk.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
 LaTeX Font Info:    ... okay on input line 17.
@@ -1364,9 +1364,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 17.
 LaTeX Info: Redefining \pageref on input line 17.
 LaTeX Info: Redefining \nameref on input line 17.
- (./homework8.out) (./homework8.out)
+ (./homeworrk.out) (./homeworrk.out)
 \@outlinefile=\write3
-\openout3 = `homework8.out'.
+\openout3 = `homeworrk.out'.
 
 LaTeX Font Info:    Try loading font information for U+msa on input line 19.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -1377,31 +1377,26 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 19.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Try loading font information for U+stmry on input line 19.
- (/usr/local/texlive/2017/texmf-dist/tex/latex/stmaryrd/Ustmry.fd) (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
+ (/usr/local/texlive/2017/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 63.
+ (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
 File: se-ascii-print.def 2016/05/16 v1.11 stringenc: Printable ASCII characters
 ) [1
 
-] [2]
-
-Package amsmath Warning: Foreign command \atop;
-(amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 112.
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 133.
-[3]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 133.
- (./homework8.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 133.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 133.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 133.
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 63.
+ (./homeworrk.aux)
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 63.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 63.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 63.
  ) 
 Here is how much of TeX's memory you used:
  26405 strings out of 492998
  497766 string characters out of 6134491
- 581399 words of memory out of 5000000
+ 576399 words of memory out of 5000000
  30182 multiletter control sequences out of 15000+600000
  538426 words of font info for 71 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 46i,8n,59p,10437b,485s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 46i,6n,59p,10437b,341s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on homework8.xdv (3 pages, 35444 bytes).
+Output written on homeworrk.xdv (1 page, 13408 bytes).
