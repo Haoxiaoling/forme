@@ -2,7 +2,7 @@
 \usepackage{xeCJK}
 \usepackage{geometry}
 \geometry{left=2.5cm,right=2.5cm,top=3cm,bottom=3cm}
-\title{Matrix Analysis Homework 8}
+\title{Matrix Analysis Homework 9}
 \author{龙肖灵 \\Xiaoling Long\\Student ID.:81943968\\email:longxl@shanghaitech.edu.cn}
 \usepackage{graphicx}
 \usepackage[colorlinks,linkcolor=red]{hyperref}
@@ -20,32 +20,52 @@
 For A symmetric $n\times n$ matrix, we assume the following ordering on its eigenvalues: $$\lambda_{1}(A)\ge \lambda_{2}(A)\ge \cdots \ge \lambda_{n}(A)$$
 \begin{description}
   \item[Problem 1]: \textit{(Finish the proof of the second part of the Weyl-II theorem)}\\
-  Let $A$,$B$ be $n\times n$ symmetric matrices. Prove that $\lambda_{j}(A)+\lambda_{k}(B)\le\lambda_{j+k−n}(A+B),\forall i,j=1,\cdots,n$.
+  Let $A$,$B$ be $n\times n$ symmetric matrices. Prove that $\lambda_{j}(A)+\lambda_{k}(B)\le\lambda_{j+k−n}(A+B),\forall j,k=1,\cdots,n$.
 
-  \begin{proof}\
-
+  \begin{proof}\ \\
+    We already know that $\lambda_{j+k-1}\le \lambda_{j}(A)+\lambda_{k}(B)$.
+    \begin{align*}
+      -\lambda_{n-(j+k-1)+1}(A+B)&= \lambda_{j+k-1}(-A-B)\\
+      -\lambda_{n-j-k+2}(A+B)&\le \lambda_{j}(-A)+\lambda_{k}(-B)\\
+      &=-\lambda_{n-j+1}(A)-\lambda_{n-k+1}(B)
+    \end{align*}
+    And let $j^{\prime}=n-j+1$, $k^{\prime}=n-k+1$, we can get that $$n-j-k+2=j^{\prime}+k^{\prime}-n$$
+    Finally, we can get that $$\lambda_{j^{\prime}+k^{\prime}}(A+B)\ge \lambda_{j^{\prime}}(A)+\lambda_{k^{\prime}}(B),\ \forall j^{\prime},k^{\prime}=1,\cdots,n$$\
     Done.
   \end{proof}
 
   \item[Problem 2]:\textit{(Finish the proof of the second part of the Interlacing-II theorem)}\\
    Let $A$ be $n\times n$ symmetric matrix. Let $B$ be an $r\times r$ principal submatrix of $A$, obtained by deleting rows/columns $i_{1},\cdots,i_{n−r}$. Show that $\lambda_{k}(B)\le\lambda_{k}(A),\forall k=1,\cdots,r$.
 
-  \begin{proof}\
+  \begin{proof}\ \\
+    Similarly, we already have that $\lambda_{n+k-r}(A)\le \lambda_{k}(B)$.
+    \begin{align*}
+      -\lambda_{n-(n+k-r)+1}(A)&=\lambda_{n+k-r}(-A)\\
+      -\lambda_{r-k+1}(A)&\le \lambda_{k}(-B)\\
+      &=-\lambda_{r-k+1}(B)
+    \end{align*}
+    So, let $k^{\prime}=r-k+1$ and when $k=1,\cdots,r$, $k^{\prime}=r,\cdots,1$ respectively. So we can get that $$\lambda_{k^{\prime}}(B)\le\lambda_{k^{\prime}}(A),\ \forall k^{\prime}=1,\cdots,r$$
     Done.
   \end{proof}
 
   \item[Problem 3]:\textit{(Finish the proof of the second part of the variational characterization of sums of eigenvalues)}\\
   Let $A$ be $n\times n$ symmetric matrix. Prove that $\sum_{i=n−k+1}^{n}\lambda_{i}(A)=\min_{U\in \mathbb{R}^{n×k},U^{T}U=I_{k}}trace(U^{T}AU)$.
 
-  \begin{proof}
-
+  \begin{proof}\ \\
+    Similarly, we have that $U^{T}AU$ is part of $V^{T}AV$. Still by \bfseries Interlacing-II \mdseries, we get another inequality as follow.
+    \begin{equation}
+      \lambda_{i}(U^{T}AU)\ge \lambda_{n+i-k}(V^{T}AV)=\lambda_{n+i-k}(A)\label{sum}
+    \end{equation}
+    Sum \ref{sum} for $i=1,\cdots,k$, we can get that $$trace(U^{T}AU)=\sum\limits_{i=1}^{k}\lambda_{i}(U^{T}AU)\ge \sum\limits_{i=1}^{k}\lambda_{n+i-k}(A)=\sum\limits_{j=n-k+1}^{n}\lambda_{j}(A)$$
     Done.
   \end{proof}
 
   \item[Problem 4]:\\
   Let $A$ be an $n\times n$ symmetric matrix. Prove that $\lambda_{n}(A)\le a_{ii}\le \lambda_{1}(A),\forall i=1,\cdots,n$.
 
-  \begin{proof}\
+  \begin{proof}\ \\
+    Let $U=e_{i},\ n=1,\cdots,n$, so $dim(U)=n\times 1$ and $U^{T}U=1$. By \textit{Interlacing-II}, we have $$\sum\limits_{i=n-k+1}^{n}\lambda_{i}(A)\le trace(U^{T}AU)\le \sum\limits_{i=1}^{k}\lambda_{i}(A)$$
+    Now $k=1$, and $U^{T}AU=a_{ii}$, Finally, we get that, $\lambda_{n}(A)\le a_{ii}\le \lambda_{1}(A),\ i=1,\cdots,n$.\\
     Done.
   \end{proof}
 
@@ -54,6 +74,14 @@ For A symmetric $n\times n$ matrix, we assume the following ordering on its eige
     Hint: Use the variational characterization of the sum of eigenvalues.
 
   \begin{proof}\ \\
+    By \textit{the variational characterization of the sum of eigenvalues}.
+    \begin{align*}
+      \sum_{i=1}^{k}\lambda_{i}(A+B)&=\max\limits_{U: n\times k \atop U^{T}U=I_{k}}(U^{T}(A+B)U)\\
+      &=\max\limits_{U: n\times k\atop U^{T}U=I_{k}}(U^{T}AU+U^{T}BU)\\
+      &\le \max\limits_{U: n\times k\atop U^{T}U=I_{k}}(U^{T}AU)+\max\limits_{U: n\times k\atop U^{T}U=I_{k}}(U^{T}BU)\\
+      &=\sum_{i=1}^{k}\lambda_{i}(A)+\sum_{i=1}^{k}\lambda_{i}(B)
+    \end{align*}
+    Finally, we get that $\sum_{i=1}^{k}(A+B)\le \sum_{i=1}^{k}\lambda_{i}(A)+\sum_{i=1}^{k}(B)$.\\
     Done.
   \end{proof}
 
